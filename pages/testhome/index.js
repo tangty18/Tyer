@@ -2,7 +2,8 @@ import { NEXT_BUILTIN_DOCUMENT } from "next/dist/shared/lib/constants";
 import { useState, useTransition } from "react";
 export default function TestHome() {
     const [conSo, setConSo] = useState(10)
-    const [tenNguoiLam,setTenNguoiLam]=useState("Hoàng Tý")
+    const [tenNguoiLam, setTenNguoiLam] = useState("Hoàng Tý")
+    const [input, setInput] = useState("")
     function tangSo() {
         setConSo(conSo + 1)
     }
@@ -11,7 +12,13 @@ export default function TestHome() {
         setConSo(conSo - 1)
     }
 
+    function inputValue(event) {
+        setInput(event.target.value)
+    }
 
+    function thayDoi(){
+        setTenNguoiLam(input)
+    }
 
     return (
         <div>
@@ -20,7 +27,10 @@ export default function TestHome() {
             <button onClick={tangSo}>Tăng</button>
             <br />
             <button onClick={giamSo}>Giảm</button>
-            <br/>
+            <br />
+            <input onChange={inputValue}></input>
+            <button onClick={thayDoi}>Thay Đổi</button>
+            <br />
             Tên Người Làm:{tenNguoiLam}
 
         </div>
