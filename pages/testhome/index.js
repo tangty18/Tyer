@@ -2,7 +2,7 @@ import { NEXT_BUILTIN_DOCUMENT } from "next/dist/shared/lib/constants";
 import { useState, useTransition } from "react";
 export default function TestHome() {
     const [conSo, setConSo] = useState(10)
-
+    const [tenNguoiLam,setTenNguoiLam]=useState("Hoàng Tý")
     function tangSo() {
         setConSo(conSo + 1)
     }
@@ -20,7 +20,11 @@ export default function TestHome() {
             <button onClick={tangSo}>Tăng</button>
             <br />
             <button onClick={giamSo}>Giảm</button>
+            <br/>
+            Tên Người Làm:{tenNguoiLam}
+
         </div>
+
     )
 
 }
