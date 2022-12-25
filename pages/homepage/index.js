@@ -21,6 +21,8 @@ export default function Home() {
             <button onClick={tangSo}>tăng</button>
             <br />
             <button onClick={giamSo}>giảm</button>
+
+            
         </div>
     )
 }
