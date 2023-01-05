@@ -1,41 +1,42 @@
 import { useState } from "react";
-export default function QuanAo() {
+export default function DienThoai() {
     const[danhSachSP, setDanhSachSP] = useState([
         {
-            name: "Áo Sơ Mi",
+            name: "Điện Thoại Bàn",
             soLuong: 23000,
             image:
-                "http://img.websosanh.vn/v2/users/root_product/images/but-chi-go-2b-thien-long-gp02/2jgr174h4dbhl.jpg"
+                "https://cdn01.dienmaycholon.vn/filewebdmclnew/DMCL21/Picture/Apro/Apro_product_344/dien-thoai-ban-panascl_450.png.webp"
         },
         {
-            name: "Áo Khoác",
+            name: "Oppo a5",
             soLuong: 15000,
             image:
-                "https://product.hstatic.net/1000230347/product/but_long_dau_thien_long_pm-09__1_.jpg"
+                "https://cdn01.dienmaycholon.vn/filewebdmclnew/DMCL21/Picture/Apro/Apro_product_31672/oppo-a17-4gb-64_main_819_450.png.webp"
         },
         {
-            name: "Áo hoodie",
+            name: "ROG",
             soLuong: 50000,
             image:
-                "https://phucma.com.vn/wp-content/uploads/2019/06/but-mau-noi-Artline-Pastel-ink-min.jpg"
+                "https://cf.shopee.vn/file/1ed4ae9de8b9a1e664272319d8d22377"
         },
         {
-            name: "Áo Ba lỗ",
+            name: "SamSung",
             price: 50000,
             image:
-                "https://adcbook.net.vn/web/image/product.template/74838/image_1024?unique=2c1660d"
+                "https://images.samsung.com/is/image/samsung/assets/vn/2208/pcd/smartphones/PCD_B_KV_Merchandising_192x192_mo.png?$192_192_PNG$"
         },
         {
-            name: "Áo thun",
+            name: "iphone",
             soLuong: 6000,
             image:
-                "https://scontent.fsgn5-13.fna.fbcdn.net/v/t39.30808-6/296099477_101442889337580_4175294896963945968_n.jpg?stp=cp6_dst-jpg&_nc_cat=101&ccb=1-7&_nc_sid=e3f864&_nc_ohc=ghIAAjqj_d8AX_LpKt3&tn=LXo4bNndAb8GCCKs&_nc_ht=scontent.fsgn5-13.fna&oh=00_AfAEktBHSMmK2WN-6wD-AF7sbaRx4qsBzKSOf90txWIh5w&oe=63AD3375"
+                "https://www.apple.com/v/iphone-14-pro/c/images/meta/iphone-14-pro_overview__e414c54gtu6a_og.png?202212152253"
         }
     ])
     const [ketQuaTimKiem,setKetquaTimKiem]=useState([])
     const [input, setInput] = useState("")
 
-  function inputValue(event) {
+
+    function inputValue(event) {
         setInput(event.target.value)
     }
 
@@ -44,6 +45,8 @@ export default function QuanAo() {
         const result = danhSachSP.filter((item)=>item.name== input)
         setKetquaTimKiem(result)
     }
+
+
 
     return (
         <div>
@@ -56,8 +59,8 @@ export default function QuanAo() {
                         </div>
                     </div>
                 ))}
-                <hr/>
-                <input onChange={inputValue}></input>
+            <hr/>
+            <input onChange={inputValue}></input>
             <button onClick={timKiem}>Tìm Kiếm</button>    
            <div>
                     {ketQuaTimKiem.map((item)=>(
@@ -71,6 +74,8 @@ export default function QuanAo() {
                         
                     ))}
             </div>
+
+
         </div>
         
    

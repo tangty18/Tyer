@@ -10,6 +10,22 @@ const [theLoaiSP,setTheLoaiSP]=useState([
   {
     theLoai:"Quần Áo",
     key:"quanao"
+  },
+  {
+    theLoai:"Điện thoại",
+    key:"dienthoai"
+  },
+  {
+    theLoai:"Máy tính",
+    key:"mayting"
+  },
+  {
+    theLoai:"giày dép",
+    key:"giaydep"
+  },
+  {
+    theLoai:"Đồ Gia dụng",
+    key:"dogiadung"
   }
 ])
 
@@ -49,6 +65,7 @@ router.push({
       />
       <button onClick={goHome}>Đừng Nhấn</button>
       <button onClick={goHome1}>Đừng Nhấn 2</button>
+      
     </>
   )
 }
