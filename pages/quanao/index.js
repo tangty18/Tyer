@@ -5,31 +5,31 @@ export default function QuanAo() {
             name: "Áo Sơ Mi",
             soLuong: 23000,
             image:
-                "http://img.websosanh.vn/v2/users/root_product/images/but-chi-go-2b-thien-long-gp02/2jgr174h4dbhl.jpg"
+                "https://cdn2.yame.vn/pimg/so-mi-nam-no-style-td-km18-0018246/31aadf2f-485f-0200-f8e0-001823d06909.jpg?w=540&h=756"
         },
         {
             name: "Áo Khoác",
             soLuong: 15000,
             image:
-                "https://product.hstatic.net/1000230347/product/but_long_dau_thien_long_pm-09__1_.jpg"
+                "https://bizweb.dktcdn.net/thumb/1024x1024/100/415/697/products/m0w2iuvv-1-1hxj-hinh-mat-truoc-01-773b266a-c405-45d5-b508-87327f1f0062.jpg"
         },
         {
             name: "Áo hoodie",
             soLuong: 50000,
             image:
-                "https://phucma.com.vn/wp-content/uploads/2019/06/but-mau-noi-Artline-Pastel-ink-min.jpg"
+                "https://cf.shopee.vn/file/e9a1464780d98ef4ef9b9c32ce8e02b8"
         },
         {
             name: "Áo Ba lỗ",
             price: 50000,
             image:
-                "https://adcbook.net.vn/web/image/product.template/74838/image_1024?unique=2c1660d"
+                "https://linhvnxk.com/wp-content/uploads/2020/06/ao-ba-lo-trang-xuat-khau-4.jpg"
         },
         {
             name: "Áo thun",
             soLuong: 6000,
             image:
-                "https://scontent.fsgn5-13.fna.fbcdn.net/v/t39.30808-6/296099477_101442889337580_4175294896963945968_n.jpg?stp=cp6_dst-jpg&_nc_cat=101&ccb=1-7&_nc_sid=e3f864&_nc_ohc=ghIAAjqj_d8AX_LpKt3&tn=LXo4bNndAb8GCCKs&_nc_ht=scontent.fsgn5-13.fna&oh=00_AfAEktBHSMmK2WN-6wD-AF7sbaRx4qsBzKSOf90txWIh5w&oe=63AD3375"
+                "https://product.hstatic.net/1000357687/product/1_6f661df1e8b44c58bf89a7961b42d184_master.jpg"
         }
     ])
     const [ketQuaTimKiem,setKetquaTimKiem]=useState([])
