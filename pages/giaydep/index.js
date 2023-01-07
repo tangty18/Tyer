@@ -34,12 +34,55 @@ export default function DoGiaDung() {
     ])
 
 
+    const [ketQuaTimKiem,setKetquaTimKiem]=useState([])
+    const [input, setInput] = useState("")
+
+
+    function inputValue(event) {
+        setInput(event.target.value)
+    }
+
+
+    function timKiem(){
+        const result = danhSachSP.filter((item)=>item.name== input)
+        setKetquaTimKiem(result)
+    }
+
+
+
     return (
         <div>
-            
-        </div>
-    )
+            {danhSachSP.map((item) => (
+                    <div>
+                        <div>Tên:{item.name}</div>
+                        <div>Giá:{item.price}</div>
+                        <div>
+                            <img src={item.image} width={"100px"} height={"100px"} />
+                        </div>
+                    </div>
+                ))}
+            <hr/>
+            <input onChange={inputValue}></input>
+            <button onClick={timKiem}>Tìm Kiếm</button>    
+           <div>
+                    {ketQuaTimKiem.map((item)=>(
+                        <div>
+                             <div>Tên:{item.name}</div>
+                             <div>Giá:{item.price}</div>
+                             <div>
+                                <img src={item.image} witdth={100}  height={100}/>
+                             </div>
+                         </div>
+                        
+                    ))}
+            </div>
 
+
+        </div>
+        
+   
+     
+ )
 
 
 }
