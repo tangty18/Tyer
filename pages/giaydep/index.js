@@ -21,7 +21,7 @@ export default function DoGiaDung() {
         },
         {
             name: "Dép lào",
-            price: 50000,
+            soLuong: 50000,
             image:
                 "https://cf.shopee.vn/file/4e0ee426458299c169ba0908fb4b9b9f"
         },

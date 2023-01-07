@@ -21,7 +21,7 @@ export default function DoGiaDung() {
         },
         {
             name: "Ấm Đun",
-            price: 50000,
+            soLuong: 50000,
             image:
                 "https://kingshop.vn/data/products/500/am-dun-nuoc-sieu-toc-nagakawa-nag0307-1.jpg"
         },
