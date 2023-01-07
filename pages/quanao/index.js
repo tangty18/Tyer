@@ -21,7 +21,7 @@ export default function QuanAo() {
         },
         {
             name: "Áo Ba lỗ",
-            price: 50000,
+            soLuong: 50000,
             image:
                 "https://linhvnxk.com/wp-content/uploads/2020/06/ao-ba-lo-trang-xuat-khau-4.jpg"
         },
@@ -50,7 +50,7 @@ export default function QuanAo() {
             {danhSachSP.map((item) => (
                     <div>
                         <div>Tên:{item.name}</div>
-                        <div>Giá:{item.price}</div>
+                        <div>Giá:{item.soLuong}</div>
                         <div>
                             <img src={item.image} width={"100px"} height={"100px"} />
                         </div>

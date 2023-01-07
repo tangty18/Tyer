@@ -55,7 +55,7 @@ export default function TestHome() {
             {danhSachSP.map((item) => (
                     <div>
                         <div>Tên:{item.name}</div>
-                        <div>Giá:{item.price}</div>
+                        <div>Giá:{item.soLuong}</div>
                         <div>
                             <img src={item.image} width={"100px"} height={"100px"} />
                         </div>

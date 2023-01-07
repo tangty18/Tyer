@@ -66,7 +66,7 @@ export default function DienThoai() {
                     {ketQuaTimKiem.map((item)=>(
                         <div>
                              <div>Tên:{item.name}</div>
-                             <div>Giá:{item.price}</div>
+                             <div>Giá:{item.soLuong}</div>
                              <div>
                                 <img src={item.image} witdth={100}  height={100}/>
                              </div>
