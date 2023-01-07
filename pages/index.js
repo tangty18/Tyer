@@ -61,6 +61,7 @@ export default function Home() {
         alt="Ảnh"
         width={500}
       />
+      <hr/>
       <button onClick={goHome}>Đừng Nhấn</button>
       <button onClick={goHome1}>Đừng Nhấn 2</button>
     </>
