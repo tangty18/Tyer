@@ -79,10 +79,10 @@ export default function TestHome() {
 
   return (
     <div>
-    
+
       <div className={styles.container}>
         {danhSachSP.map((item) => (
-          <div>
+          <div className={styles.item}>
             <div>Tên:{item.name}</div>
             <div>Giá:{item.soLuong}</div>
             <div>
