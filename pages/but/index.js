@@ -34,9 +34,25 @@ export default function TestHome() {
     ])
 
 
+    const [ketQuaTimKiem,setKetquaTimKiem]=useState([])
+    const [input, setInput] = useState("")
+
+
+    function inputValue(event) {
+        setInput(event.target.value)
+    }
+
+
+    function timKiem(){
+        const result = danhSachSP.filter((item)=>item.name== input)
+        setKetquaTimKiem(result)
+    }
+
+
+
     return (
         <div>
-                {danhSachSP.map((item) => (
+            {danhSachSP.map((item) => (
                     <div>
                         <div>Tên:{item.name}</div>
                         <div>Giá:{item.price}</div>
@@ -45,11 +61,31 @@ export default function TestHome() {
                         </div>
                     </div>
                 ))}
+            <hr/>
+            <input onChange={inputValue}></input>
+            <button onClick={timKiem}>Tìm Kiếm</button>    
+           <div>
+                    {ketQuaTimKiem.map((item)=>(
+                        <div>
+                             <div>Tên:{item.name}</div>
+                             <div>Giá:{item.price}</div>
+                             <div>
+                                <img src={item.image} witdth={100}  height={100}/>
+                             </div>
+                         </div>
+                        
+                    ))}
             </div>
-                   
-    )
-}
 
+
+        </div>
+        
+   
+     
+ )
+
+
+}
     
       
 
