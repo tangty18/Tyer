@@ -35,7 +35,8 @@ export default function QuanAo() {
     const [ketQuaTimKiem,setKetquaTimKiem]=useState([])
     const [input, setInput] = useState("")
 
-  function inputValue(event) {
+
+    function inputValue(event) {
         setInput(event.target.value)
     }
 
@@ -50,7 +51,7 @@ export default function QuanAo() {
             {danhSachSP.map((item) => (
                     <div>
                         <div>Tên:{item.name}</div>
-                        <div>Giá:{item.soLuong}</div>
+                        <div>Số Lượng:{item.soLuong}</div>
                         <div>
                             <img src={item.image} width={"100px"} height={"100px"} />
                         </div>
@@ -63,7 +64,7 @@ export default function QuanAo() {
                     {ketQuaTimKiem.map((item)=>(
                         <div>
                              <div>Tên:{item.name}</div>
-                             <div>Giá:{item.price}</div>
+                             <div>Số Lượng:{item.soLuong}</div>
                              <div>
                                 <img src={item.image} witdth={100}  height={100}/>
                              </div>
