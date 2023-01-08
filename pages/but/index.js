@@ -73,8 +73,16 @@ export default function TestHome() {
   }
 
   function timKiem() {
-    const result = danhSachSP.filter((item) => item.name == input);
+    const result = danhSachSP.filter((item) =>{
+      return coTrongChuoiKhong(item.name, "")
+    });
     setKetquaTimKiem(result);
+  }
+  function coTrongChuoiKhong(chuoi, tuKhoa) {
+    let chuoiMoi = chuoi.toLowerCase();
+    let tuKhoaMoi = tuKhoa.toLowerCase();
+  
+    return chuoiMoi.includes(tuKhoaMoi)
   }
 
   return (
