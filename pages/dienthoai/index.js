@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./dienthoai.module.css"
+import { Layout1 } from "../../components/layout/layout1";
 export default function DienThoai() {
   const [danhSachSP, setDanhSachSP] = useState([
     {
@@ -111,3 +112,10 @@ export default function DienThoai() {
     </div>
   );
 }
+DienThoai.getLayout = function getLayout(page) {
+  return (
+    <Layout1>
+      <DienThoai />
+    </Layout1>
+  );
+};
