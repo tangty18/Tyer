@@ -71,7 +71,7 @@ export default function QuanAo() {
  
   function timKiem() {
     const result = danhSachSP.filter((item) =>{
-      return coTrongChuoiKhong(item.name, "")
+      return coTrongChuoiKhong(item.name, (""))
     });
     setKetquaTimKiem(result);
   }
