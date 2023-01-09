@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./but.module.css";
+import { Layout1 } from "../../components/layout/layout1";
 
 export default function TestHome() {
   const [danhSachSP, setDanhSachSP] = useState([
@@ -117,3 +118,11 @@ export default function TestHome() {
     </div>
   );
 }
+
+TestHome.getLayout = function getLayout(page) {
+  return (
+    <Layout1>
+      <TestHome />
+    </Layout1>
+  );
+};
