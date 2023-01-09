@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { Layout1 } from "../components/layout/layout1";
 export default function Home() {
   const router = useRouter();
   const [theLoaiSP, setTheLoaiSP] = useState([
@@ -67,3 +68,11 @@ export default function Home() {
     </>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return (
+    <Layout1>
+      <Home />
+    </Layout1>
+  );
+};

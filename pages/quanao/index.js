@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./quanao.module.css"
+import { Layout1 } from "../../components/layout/layout1";
 export default function QuanAo() {
   const [danhSachSP, setDanhSachSP] = useState([
     {
@@ -112,3 +113,11 @@ export default function QuanAo() {
     </div>
   );
 }
+
+QuanAo.getLayout = function getLayout(page) {
+  return (
+    <Layout1>
+      <QuanAo />
+    </Layout1>
+  );
+};

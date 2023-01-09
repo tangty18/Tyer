@@ -4,23 +4,35 @@ import { useRouter } from "next/router";
 export function Header1() {
   const router = useRouter();
 
-  function xemBut(){
+  function xemBut() {
     router.push({
-        pathname: "/but",
-      });
+      pathname: "/but",
+    });
   }
 
-  function xemQuanAo(){
+  function xemQuanAo() {
     router.push({
-        pathname: "/quanao",
-      });
+      pathname: "/quanao",
+    });
   }
 
+  function veTrangChu() {
+    router.push({
+      pathname: "/",
+    });
+  }
 
   return (
     <div className={styles.header1}>
-      <div className={styles.item} onClick={xemBut}>Xem bút</div>
-      <div className={styles.item} onClick={xemQuanAo}>Xem quần áo</div>
+      <div onClick={veTrangChu} className={styles.logo}>
+        TYer
+      </div>
+      <div className={styles.item} onClick={xemBut}>
+        Xem bút
+      </div>
+      <div className={styles.item} onClick={xemQuanAo}>
+        Xem quần áo
+      </div>
     </div>
   );
 }
