@@ -16,4 +16,4 @@ Bài tập 2. Nâng cấp chức năng tìm kiếm: Ví dụ gõ bút => hiện 
 ---
 bài tập 9/1
 bài 1. thêm header toàn bộ các trang còn lại
-bài 2.
+bài 2. Sửa trang footer theo yêu cầu
