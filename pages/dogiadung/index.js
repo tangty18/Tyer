@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./dogiadung.module.css"
+import { Layout1 } from "../../components/layout/layout1";
 export default function DoGiaDung() {
   const [danhSachSP, setDanhSachSP] = useState([
     {
@@ -110,3 +111,10 @@ export default function DoGiaDung() {
     </div>
   );
 }
+DoGiaDung.getLayout = function getLayout(page) {
+  return (
+    <Layout1>
+      <DoGiaDung />
+    </Layout1>
+  );
+};

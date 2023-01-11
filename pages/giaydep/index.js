@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./giaydep.module.css"
-export default function DoGiaDung() {
+import { Layout1 } from "../../components/layout/layout1";
+export default function GiayDep() {
   const [danhSachSP, setDanhSachSP] = useState([
     {
       name: "Giày",
@@ -111,3 +112,10 @@ export default function DoGiaDung() {
     </div>
   );
 }
+GiayDep.getLayout = function getLayout(page) {
+  return (
+    <Layout1>
+      <GiayDep />
+    </Layout1>
+  );
+};

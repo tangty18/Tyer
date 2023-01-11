@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./maytinh.module.css"
-export default function DoGiaDung() {
+import { Layout1 } from "../../components/layout/layout1";
+export default function MayTinh() {
   const [danhSachSP, setDanhSachSP] = useState([
     {
       name: "Lenovo",
@@ -115,3 +116,10 @@ export default function DoGiaDung() {
     </div>
   );
 }
+MayTinh.getLayout = function getLayout(page) {
+  return (
+    <Layout1>
+      <MayTinh />
+    </Layout1>
+  );
+};
