@@ -15,6 +15,28 @@ export function Header1() {
       pathname: "/quanao",
     });
   }
+  function xemDienThoai() {
+    router.push({
+      pathname: "/dienthoai",
+    });
+  }
+  function xemMayTinh() {
+    router.push({
+      pathname: "/mayting",
+    });
+  }
+  function xemGiayDep() {
+    router.push({
+      pathname: "/giaydep",
+    });
+  }
+  function xemDoGiaDung() {
+    router.push({
+      pathname: "/dogiadung",
+    });
+  }
+
+
 
   function veTrangChu() {
     router.push({
@@ -33,6 +55,19 @@ export function Header1() {
       <div className={styles.item} onClick={xemQuanAo}>
         Xem quần áo
       </div>
+      <div className={styles.item} onClick={xemDienThoai}>
+        Xem điện thoại
+      </div>
+      <div className={styles.item} onClick={xemMayTinh}>
+        Xem Máy Tính
+      </div>
+      <div className={styles.item} onClick={xemGiayDep}>
+        Xem giày dép
+      </div>
+      <div className={styles.item} onClick={xemDoGiaDung}>
+        Xem đồ gia dụng
+      </div>
+
     </div>
   );
 }
