@@ -36,8 +36,6 @@ export function Header1() {
     });
   }
 
-
-
   function veTrangChu() {
     router.push({
       pathname: "/",
@@ -68,6 +66,8 @@ export function Header1() {
         Xem đồ gia dụng
       </div>
 
+      <div className={styles.gio_hang}>Giỏ hàng</div>
+      <div className={styles.dang_nhap}> Đăng nhập</div>
     </div>
   );
 }
