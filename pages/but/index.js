@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./but.module.css";
 import { Layout1 } from "../../components/layout/layout1";
+import { Item } from "../../components/item/item";
 
 export default function TestHome() {
   const [danhSachSP, setDanhSachSP] = useState([
@@ -74,30 +75,23 @@ export default function TestHome() {
   }
 
   function timKiem() {
-    const result = danhSachSP.filter((item) =>{
-      return coTrongChuoiKhong(item.name, "")
+    const result = danhSachSP.filter((item) => {
+      return coTrongChuoiKhong(item.name, "");
     });
     setKetquaTimKiem(result);
   }
   function coTrongChuoiKhong(chuoi, tuKhoa) {
     let chuoiMoi = chuoi.toLowerCase();
     let tuKhoaMoi = tuKhoa.toLowerCase();
-  
-    return chuoiMoi.includes(tuKhoaMoi)
+
+    return chuoiMoi.includes(tuKhoaMoi);
   }
 
   return (
     <div>
-
       <div className={styles.container}>
         {danhSachSP.map((item) => (
-          <div className={styles.item}>
-            <div>Tên:{item.name}</div>
-            <div>Giá:{item.soLuong}</div>
-            <div>
-              <img src={item.image} width={"100px"} height={"100px"} />
-            </div>
-          </div>
+          <Item ten={item.name} gia={item.soLuong} image={item.image} />
         ))}
       </div>
 

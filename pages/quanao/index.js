@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./quanao.module.css"
+import styles from "./quanao.module.css";
 import { Layout1 } from "../../components/layout/layout1";
 export default function QuanAo() {
   const [danhSachSP, setDanhSachSP] = useState([
@@ -60,7 +60,7 @@ export default function QuanAo() {
       soLuong: 6000,
       image:
         "https://product.hstatic.net/1000357687/product/1_6f661df1e8b44c58bf89a7961b42d184_master.jpg",
-    }
+    },
   ]);
   const [ketQuaTimKiem, setKetquaTimKiem] = useState([]);
   const [input, setInput] = useState("");
@@ -69,33 +69,22 @@ export default function QuanAo() {
     setInput(event.target.value);
   }
 
- 
   function timKiem() {
-    const result = danhSachSP.filter((item) =>{
-      return coTrongChuoiKhong(item.name, (""))
+    const result = danhSachSP.filter((item) => {
+      return coTrongChuoiKhong(item.name, "");
     });
     setKetquaTimKiem(result);
   }
   function coTrongChuoiKhong(chuoi, tuKhoa) {
     let chuoiMoi = chuoi.toLowerCase();
     let tuKhoaMoi = tuKhoa.toLowerCase();
-  
-    return chuoiMoi.includes(tuKhoaMoi)
+
+    return chuoiMoi.includes(tuKhoaMoi);
   }
 
   return (
     <div>
-    <div className={styles.container}>
-        {danhSachSP.map((item) => (
-          <div className={styles.item}>
-            <div>Tên:{item.name}</div>
-            <div>Giá:{item.soLuong}</div>
-            <div>
-              <img src={item.image} width={"100px"} height={"100px"} />
-            </div>
-          </div>
-        ))}
-        </div>
+      <div className={styles.container}></div>
       <hr />
       <input onChange={inputValue}></input>
       <button onClick={timKiem}>Tìm Kiếm</button>

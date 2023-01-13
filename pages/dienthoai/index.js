@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./dienthoai.module.css"
+import styles from "./dienthoai.module.css";
 import { Layout1 } from "../../components/layout/layout1";
 export default function DienThoai() {
   const [danhSachSP, setDanhSachSP] = useState([
@@ -68,33 +68,23 @@ export default function DienThoai() {
   function coTrongChuoiKhong(chuoi, tuKhoa) {
     let chuoiMoi = chuoi.toLowerCase();
     let tuKhoaMoi = tuKhoa.toLowerCase();
-  
-    return chuoiMoi.includes(tuKhoaMoi)
+
+    return chuoiMoi.includes(tuKhoaMoi);
   }
   function inputValue(event) {
     setInput(event.target.value);
   }
 
   function timKiem() {
-    const result = danhSachSP.filter((item) =>{
-      return coTrongChuoiKhong(item.name, "")
+    const result = danhSachSP.filter((item) => {
+      return coTrongChuoiKhong(item.name, "");
     });
     setKetquaTimKiem(result);
   }
 
   return (
     <div>
-     <div className={styles.container}>
-        {danhSachSP.map((item) => (
-          <div className={styles.item}>
-            <div>Tên:{item.name}</div>
-            <div>Giá:{item.soLuong}</div>
-            <div>
-              <img src={item.image} width={"100px"} height={"100px"} />
-            </div>
-          </div>
-        ))}
-        </div>
+      <div className={styles.container}></div>
       <hr />
       <input onChange={inputValue}></input>
       <button onClick={timKiem}>Tìm Kiếm</button>

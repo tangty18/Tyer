@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./maytinh.module.css"
+import styles from "./maytinh.module.css";
 import { Layout1 } from "../../components/layout/layout1";
 export default function MayTinh() {
   const [danhSachSP, setDanhSachSP] = useState([
@@ -62,7 +62,7 @@ export default function MayTinh() {
       soLuong: 6000,
       image:
         "https://fptshop.com.vn/Uploads/Originals/2022/9/30/638001227463678942_asus-gaming-zephyrus-g513-xam-led-4zone-dd.jpg",
-    }
+    },
   ]);
 
   const [ketQuaTimKiem, setKetquaTimKiem] = useState([]);
@@ -72,33 +72,22 @@ export default function MayTinh() {
     setInput(event.target.value);
   }
 
- 
   function timKiem() {
-    const result = danhSachSP.filter((item) =>{
-      return coTrongChuoiKhong(item.name, "")
+    const result = danhSachSP.filter((item) => {
+      return coTrongChuoiKhong(item.name, "");
     });
     setKetquaTimKiem(result);
   }
   function coTrongChuoiKhong(chuoi, tuKhoa) {
     let chuoiMoi = chuoi.toLowerCase();
     let tuKhoaMoi = tuKhoa.toLowerCase();
-  
-    return chuoiMoi.includes(tuKhoaMoi)
+
+    return chuoiMoi.includes(tuKhoaMoi);
   }
 
   return (
     <div>
-    <div className={styles.container}>
-        {danhSachSP.map((item) => (
-          <div className={styles.item}>
-            <div>Tên:{item.name}</div>
-            <div>Giá:{item.soLuong}</div>
-            <div>
-              <img src={item.image} width={"100px"} height={"100px"} />
-            </div>
-          </div>
-        ))}
-        </div>
+      <div className={styles.container}></div>
       <hr />
       <input onChange={inputValue}></input>
       <button onClick={timKiem}>Tìm Kiếm</button>
