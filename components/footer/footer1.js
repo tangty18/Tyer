@@ -27,7 +27,23 @@ export function Footer1() {
       pathname: "/",
     });
   }
+  const openInNewTab = () => {
+    const newWindow = window.open(
+      "https://www.facebook.com/profile.php?id=100084156063521",
+      "_blank",
+      "noopener,noreferrer"
+    );
+    if (newWindow) newWindow.opener = null;
+  };
 
+  const openInNewTab2 = () => {
+    const newWindow = window.open(
+      "https://www.youtube.com/channel/UCpuauVqOqAO-29hZz2HwzDw",
+      "_blank",
+      "noopener,noreferrer"
+    );
+    if (newWindow) newWindow.opener = null;
+  };
 
 
 
@@ -45,8 +61,8 @@ export function Footer1() {
    <div className={styles.item} onClick={support}>
     hỗ trợ
   </div>
-  <div className={styles.donate}>Donate</div>
-  <div className={styles.youtube}>Youtube</div>
+  <div className={styles.donate} onClick={openInNewTab}>Donate</div>
+  <div className={styles.youtube} onClick={openInNewTab2}>Youtube</div>
 
 </div>
 );
