@@ -13,10 +13,18 @@ export default function HoTro() {
     );
     if (newWindow) newWindow.opener = null;
   };
+  const openInNewTab2 = () => {
+    const newWindow = window.open(
+      "https://www.youtube.com/channel/UCpuauVqOqAO-29hZz2HwzDw",
+      "_blank",
+      "noopener,noreferrer"
+    );
+    if (newWindow) newWindow.opener = null;
+  };
 
   return (
     <div>
-      <div>Thông Tin:{thongTin}</div>
+      <div onClick={openInNewTab2} className={styles.able_to_click}>Youtube</div>
       <div onClick={openInNewTab} className={styles.able_to_click}>
         Facebook
       </div>

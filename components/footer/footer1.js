@@ -45,6 +45,9 @@ export function Footer1() {
    <div className={styles.item} onClick={support}>
     hỗ trợ
   </div>
+  <div className={styles.donate}>Donate</div>
+  <div className={styles.youtube}>Youtube</div>
+
 </div>
 );
 }

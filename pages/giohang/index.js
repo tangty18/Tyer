@@ -1,9 +1,8 @@
 import { useState } from "react";
-import styles from "./maytinh.module.css";
+import styles from "./giohang.module.css";
 import { Layout1 } from "../../components/layout/layout1";
 import { Item } from "../../components/item/item";
-export default function MayTinh() {
-  const [danhSachSP, setDanhSachSP] = useState([
+export default function GioHang() {  const [danhSachSP, setDanhSachSP] = useState([
     {
       name: "Lenovo",
       soLuong: 23000,
@@ -110,10 +109,12 @@ export default function MayTinh() {
     </div>
   );
 }
-MayTinh.getLayout = function getLayout(page) {
+GioHang.getLayout = function getLayout(page) {
   return (
     <Layout1>
-      <MayTinh />
+      <GioHang />
     </Layout1>
   );
 };
+   
+  

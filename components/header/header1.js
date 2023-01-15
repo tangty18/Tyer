@@ -35,6 +35,16 @@ export function Header1() {
       pathname: "/dogiadung",
     });
   }
+  function xemGioHang() {
+    router.push({
+      pathname: "/giohang",
+    });
+  }
+  function dangNhap() {
+    router.push({
+      pathname: "/login",
+    });
+  }
 
   function veTrangChu() {
     router.push({
@@ -65,9 +75,8 @@ export function Header1() {
       <div className={styles.item} onClick={xemDoGiaDung}>
         Xem đồ gia dụng
       </div>
-
-      <div className={styles.gio_hang}>Giỏ hàng</div>
-      <div className={styles.dang_nhap}> Đăng nhập</div>
+      <div className={styles.gio_hang} onClick={xemGioHang}>Giỏ hàng</div>
+      <div className={styles.dang_nhap} onClick={dangNhap}> Đăng nhập</div>
     </div>
   );
 }

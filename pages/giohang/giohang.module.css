@@ -1,0 +1,7 @@
+.giohang{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.item{
+    width: 25%;
+}

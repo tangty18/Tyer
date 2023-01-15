@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./dogiadung.module.css";
 import { Layout1 } from "../../components/layout/layout1";
+import { Item } from "../../components/item/item";
 export default function DoGiaDung() {
   const [danhSachSP, setDanhSachSP] = useState([
     {
@@ -82,7 +83,12 @@ export default function DoGiaDung() {
   }
   return (
     <div>
-      <div className={styles.container}></div>
+      <div className={styles.container}>
+        {danhSachSP.map((item) => (
+          <Item ten={item.name} gia={item.soLuong} image={item.image} />
+        ))}
+        </div>
+
       <hr />
       <input onChange={inputValue}></input>
       <button onClick={timKiem}>Tìm Kiếm</button>

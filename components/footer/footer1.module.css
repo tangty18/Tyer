@@ -4,6 +4,8 @@
     height:40px;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    cursor: pointer;
 }
 .item{
     padding-right: 10px;
@@ -11,4 +13,11 @@
 .logo{
     padding-right: 30px;
     font-size: 30px
+}
+.donate{
+    margin-left: auto;
+}
+
+.youtube{
+    margin-left: 10px;
 }
