@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./dienthoai.module.css";
 import { Layout1 } from "../../components/layout/layout1";
-import { Item } from "../../components/item/item";
+import { Item } from "../../components/item/but/item";
 export default function DienThoai() {
   const [danhSachSP, setDanhSachSP] = useState([
     {
@@ -83,29 +83,7 @@ export default function DienThoai() {
     setKetquaTimKiem(result);
   }
 
-  return (
-    <div>
-      <div className={styles.container}>
-        {danhSachSP.map((item) => (
-          <Item ten={item.name} gia={item.soLuong} image={item.image} />
-        ))}
-        </div>
-      <hr />
-      <input onChange={inputValue}></input>
-      <button onClick={timKiem}>Tìm Kiếm</button>
-      <div>
-        {ketQuaTimKiem.map((item) => (
-          <div>
-            <div>Tên:{item.name}</div>
-            <div>Giá:{item.soLuong}</div>
-            <div>
-              <img src={item.image} witdth={100} height={100} />
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return <div></div>;
 }
 DienThoai.getLayout = function getLayout(page) {
   return (

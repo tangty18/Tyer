@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./dogiadung.module.css";
 import { Layout1 } from "../../components/layout/layout1";
-import { Item } from "../../components/item/item";
+import { Item } from "../../components/item/but/item";
 export default function DoGiaDung() {
   const [danhSachSP, setDanhSachSP] = useState([
     {
@@ -81,30 +81,7 @@ export default function DoGiaDung() {
 
     return chuoiMoi.includes(tuKhoaMoi);
   }
-  return (
-    <div>
-      <div className={styles.container}>
-        {danhSachSP.map((item) => (
-          <Item ten={item.name} gia={item.soLuong} image={item.image} />
-        ))}
-        </div>
-
-      <hr />
-      <input onChange={inputValue}></input>
-      <button onClick={timKiem}>Tìm Kiếm</button>
-      <div>
-        {ketQuaTimKiem.map((item) => (
-          <div>
-            <div>Tên:{item.name}</div>
-            <div>Số Lượng:{item.soLuong}</div>
-            <div>
-              <img src={item.image} witdth={100} height={100} />
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return <div></div>;
 }
 DoGiaDung.getLayout = function getLayout(page) {
   return (
