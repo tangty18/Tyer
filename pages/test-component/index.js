@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Layout1 } from "../../components/layout/layout1";
-import { Button1 } from "../../components/buttons/buttons";
-import { Button2 } from "../../components/button2/button2";
-import { Button3 } from "../../components/button3/button3";
+import { Button1 } from "../../components/buttons/button1/buttons";
+import { Button2 } from "../../components/buttons/button2/button2";
+import { Button3 } from "../../components/buttons/button3/button3";
 export default function TestComponent() {
   const [thongTin, setThongTin] = useState("Đây");
 
