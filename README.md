@@ -25,3 +25,10 @@ bài tập 2. Khi nhấn vô biểu tượng giỏ hàng/đăng nhập trên hea
 bài tập 3. tạo trước 3 loại button dựa vào màu: xanh dương, xám, xanh lá cây rồi bỏ vào trang test-component
 bài tập 4. trang đăng nhập có form login gồm username và password
 bài tập 5. trang giỏ hàng các item theo chiều dọc
+---
+bài tập sáng 17/1
+ở trang quần áo hiển thị là tên , ảnh , màu sắc, giá, size, 
+Điện thoại: tên, hãng, khối lượng, giá, ảnh, giới tính, tốc độ
+máy tính: tên, ảnh, hãng, năm ra mắt, khối lượng, sức mạnh
+giầy dép: tên, ảnh, size, khối lượng, màu sắc, giá, độ bền, phòng thủ
+đồ gia dụng: tên, ảnh, giá, khối lượng, độ cứng, màu sắc, tấn công
