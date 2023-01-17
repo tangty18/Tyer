@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Button3 } from "../../buttons/button3/button3";
 import { Button4 } from "../../buttons/button4/button";
 
-export function Item({ ten, gia, khoiLuong, image }) {
+export function Item({ ten, gia, khoiLuong, image,doCung,mauSac,tanCong }) {
   const router = useRouter();
 
   return (
@@ -11,6 +11,9 @@ export function Item({ ten, gia, khoiLuong, image }) {
       <div>Tên:{ten}</div>
       <div>Giá:{gia}</div>
       <div>Khối lượng: {khoiLuong}</div>
+      <div>Độ Cứng:{doCung}</div>
+      <div>Màu Sắc:{mauSac}</div>
+      <div>Tấn Công:{tanCong}</div>
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>

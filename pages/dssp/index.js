@@ -1,8 +1,7 @@
 import { useState } from "react";
-import styles from "./giohang.module.css";
-import { Layout1 } from "../../components/layout/layout1";
+import styles from "./dssp.module.css";
 import { Item } from "../../components/item/giohang/item";
-export default function GioHang() {  const [danhSachSP, setDanhSachSP] = useState([
+export default function DSSP() {  const [danhSachSP, setDanhSachSP] = useState([
     {
       name: "Lenovo",
       soLuong: 23000,
@@ -109,12 +108,3 @@ export default function GioHang() {  const [danhSachSP, setDanhSachSP] = useStat
     </div>
   );
 }
-GioHang.getLayout = function getLayout(page) {
-  return (
-    <Layout1>
-      <GioHang />
-    </Layout1>
-  );
-};
-   
-  

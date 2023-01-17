@@ -51,6 +51,11 @@ export function Header1() {
       pathname: "/",
     });
   }
+  function danhSachSP() {
+    router.push({
+      pathname: "/dssp",
+    });
+  }
 
   return (
     <div className={styles.header1}>
@@ -75,6 +80,7 @@ export function Header1() {
       <div className={styles.item} onClick={xemDoGiaDung}>
         Xem đồ gia dụng
       </div>
+      <div className={styles.dssp} onClick={danhSachSP}>Danh Sách Sản Phẩm Yêu Thích</div>
       <div className={styles.gio_hang} onClick={xemGioHang}>Giỏ hàng</div>
       <div className={styles.dang_nhap} onClick={dangNhap}> Đăng nhập</div>
     </div>

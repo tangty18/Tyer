@@ -32,3 +32,6 @@ bài tập sáng 17/1
 máy tính: tên, ảnh, hãng, năm ra mắt, khối lượng, sức mạnh
 giầy dép: tên, ảnh, size, khối lượng, màu sắc, giá, độ bền, phòng thủ
 đồ gia dụng: tên, ảnh, giá, khối lượng, độ cứng, màu sắc, tấn công
+thêm button4 màu hồng
+thêm nút add vào các trang còn lại
+thêm trang dssp yêu thích
