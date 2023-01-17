@@ -89,13 +89,6 @@ export default function TestHome() {
 
   return (
     <div>
-      <div className={styles.container}>
-        {danhSachSP.map((item) => (
-          <Item ten={item.name} gia={item.soLuong} image={item.image} />
-        ))}
-      </div>
-
-      <hr />
       <input onChange={inputValue}></input>
       <button onClick={timKiem}>Tìm Kiếm</button>
       <div>
@@ -109,6 +102,15 @@ export default function TestHome() {
           </div>
         ))}
       </div>
+      <hr />
+      <div className={styles.container}>
+        {danhSachSP.map((item) => (
+          <Item ten={item.name} gia={item.soLuong} image={item.image} />
+        ))}
+      </div>
+
+
+
     </div>
   );
 }
