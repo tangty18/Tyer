@@ -35,3 +35,4 @@ giầy dép: tên, ảnh, size, khối lượng, màu sắc, giá, độ bền, 
 thêm button4 màu hồng
 thêm nút add vào các trang còn lại
 thêm trang dssp yêu thích
++
