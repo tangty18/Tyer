@@ -35,4 +35,9 @@ giầy dép: tên, ảnh, size, khối lượng, màu sắc, giá, độ bền, 
 thêm button4 màu hồng
 thêm nút add vào các trang còn lại
 thêm trang dssp yêu thích
-+
+______
+bài tập sáng 19/1
+1. Thêm nút xem chi tiết cho tất cả sản phẩm
+2. Trong trang chi tiết thêm layout có header footer như những trang kia
+3. Trong trang chi tiết lấy đại sản phẩm nào đó hiện lên
+4. Thêm cái cusor pointer cho 3 nút button 2 3 4
