@@ -139,7 +139,7 @@ export default function MayTinh() {
           gia={item.soLuong}
           image={item.image}
           khoiLuong={item.khoiLuong}
-          namRaMat={item.namRaMat}
+          namRaMat={item.namRamat}
           sucManh={item.sucManh}
          
         />
