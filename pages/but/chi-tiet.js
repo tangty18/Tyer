@@ -1,17 +1,13 @@
 import { Layout1 } from "../../components/layout/layout1";
 import { useState } from "react";
 import { Item } from "../../components/item/but/item";
-export default function ChiTiet() {
-  const [sanPham, setSanPham] = useState([
-    {
-      name: "Bút Chì",
-      soLuong: 23000,
-      khoiLuong: 13,
-      image:
-        "http://img.websosanh.vn/v2/users/root_product/images/but-chi-go-2b-thien-long-gp02/2jgr174h4dbhl.jpg",
-    }])
-  return <div>
-       <div>
+import { fetchData } from "../../tools/axios";
+
+export default function ChiTiet({ props }) {
+  const [sanPham, setSanPham] = useState(props.motCayBut);
+  return (
+    <div>
+      <div>
         {sanPham.map((item) => (
           <Item
             ten={item.name}
@@ -21,13 +17,20 @@ export default function ChiTiet() {
           />
         ))}
       </div>
-       
-  </div>
+    </div>
+  );
 }
 ChiTiet.getLayout = function getLayout(page) {
   return (
     <Layout1>
-      <ChiTiet />
+      <ChiTiet props={page.props} />
     </Layout1>
   );
 };
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const { data } = await fetchData.get("/but/lay-toan-bo");
+  // Pass data to the page via props
+  return { props: { motCayBut: data } };
+}

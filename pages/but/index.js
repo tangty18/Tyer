@@ -2,78 +2,10 @@ import { useState } from "react";
 import styles from "./but.module.css";
 import { Layout1 } from "../../components/layout/layout1";
 import { Item } from "../../components/item/but/item";
-export default function TestHome() {
-  const [danhSachSP, setDanhSachSP] = useState([
-    {
-      name: "Bút Chì",
-      soLuong: 23000,
-      khoiLuong: 13,
-      image:
-        "http://img.websosanh.vn/v2/users/root_product/images/but-chi-go-2b-thien-long-gp02/2jgr174h4dbhl.jpg",
-    },
-    {
-      name: "Bút Lông",
-      soLuong: 15000,
-      khoiLuong: 13,
-      image:
-        "https://product.hstatic.net/1000230347/product/but_long_dau_thien_long_pm-09__1_.jpg",
-    },
-    {
-      name: "Bút Màu",
-      soLuong: 50000,
-      khoiLuong: 13,
-      image:
-        "https://phucma.com.vn/wp-content/uploads/2019/06/but-mau-noi-Artline-Pastel-ink-min.jpg",
-    },
-    {
-      name: "Bút Bi",
-      soLuong: 50000,
-      khoiLuong: 13,
-      image:
-        "https://adcbook.net.vn/web/image/product.template/74838/image_1024?unique=2c1660d",
-    },
-    {
-      name: "Cọ Vẽ",
-      soLuong: 6000,
-      khoiLuong: 13,
-      image:
-        "https://phucma.com.vn/wp-content/uploads/2019/06/but-mau-noi-Artline-Pastel-ink-min.jpg",
-    },
-    {
-      name: "Bút Chì",
-      soLuong: 23000,
-      image:
-        "http://img.websosanh.vn/v2/users/root_product/images/but-chi-go-2b-thien-long-gp02/2jgr174h4dbhl.jpg",
-    },
-    {
-      name: "Bút Lông",
-      soLuong: 15000,
-      khoiLuong: 13,
-      image:
-        "https://product.hstatic.net/1000230347/product/but_long_dau_thien_long_pm-09__1_.jpg",
-    },
-    {
-      name: "Bút Màu",
-      soLuong: 50000,
-      khoiLuong: 13,
-      image:
-        "https://phucma.com.vn/wp-content/uploads/2019/06/but-mau-noi-Artline-Pastel-ink-min.jpg",
-    },
-    {
-      name: "Bút Bi",
-      soLuong: 50000,
-      khoiLuong: 13,
-      image:
-        "https://adcbook.net.vn/web/image/product.template/74838/image_1024?unique=2c1660d",
-    },
-    {
-      name: "Cọ Vẽ",
-      soLuong: 6000,
-      khoiLuong: 13,
-      image:
-        "https://phucma.com.vn/wp-content/uploads/2019/06/but-mau-noi-Artline-Pastel-ink-min.jpg",
-    },
-  ]);
+import { fetchData } from "../../tools/axios";
+
+export default function TestHome({ props }) {
+  const [danhSachSP, setDanhSachSP] = useState(props.danhSachBut);
 
   const [ketQuaTimKiem, setKetquaTimKiem] = useState([]);
   const [input, setInput] = useState("");
@@ -128,7 +60,14 @@ export default function TestHome() {
 TestHome.getLayout = function getLayout(page) {
   return (
     <Layout1>
-      <TestHome />
+      <TestHome props={page.props} />
     </Layout1>
   );
 };
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const { data } = await fetchData.get("/but/lay-toan-bo");
+  // Pass data to the page via props
+  return { props: { danhSachBut: data } };
+}
