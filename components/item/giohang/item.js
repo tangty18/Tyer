@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Button3 } from "../../buttons/button3/button3";
 import { Button1 } from "../../buttons/button1/buttons";
 
+
 export function Item({ ten, gia, khoiLuong, image }) {
   const router = useRouter();
 
