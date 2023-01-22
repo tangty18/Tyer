@@ -41,3 +41,7 @@ bài tập sáng 19/1
 2. Trong trang chi tiết thêm layout có header footer như những trang kia
 3. Trong trang chi tiết lấy đại sản phẩm nào đó hiện lên
 4. Thêm cái cusor pointer cho 3 nút button 2 3 4
+________
+bài tập 20/1
+1. Thêm tầng logic cho trang web
+2. thêm layout khác cho trang login

@@ -1,18 +1,9 @@
 import { Layout1 } from "../../components/layout/layout1";
 import { useState } from "react";
 import { Item } from "../../components/item/dienthoai/item";
-export default function ChiTiet() {
-  const [sanPham, setSanPham] = useState([
-    {
-      name: "Điện Thoại Bàn",
-      soLuong: 23000,
-      hang: "Soni",
-      gioiTinh: "nam",
-      tocDo: 150,
-      khoiLuong: 13,
-      image:
-        "https://cdn01.dienmaycholon.vn/filewebdmclnew/DMCL21/Picture/Apro/Apro_product_344/dien-thoai-ban-panascl_450.png.webp",
-    }])
+import { fetchData } from "../../tools/axios";
+export default function ChiTiet({props}) {
+  const [sanPham, setSanPham] = useState(props.motChiecDienThoai)
   return <div>
     <div>
       {sanPham.map((item) => (
@@ -32,7 +23,14 @@ export default function ChiTiet() {
 ChiTiet.getLayout = function getLayout(page) {
   return (
     <Layout1>
-      <ChiTiet />
+      <ChiTiet props={page.props}/>
     </Layout1>
   );
 };
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const { data } = await fetchData.get("/dienthoai/lay-1");
+  // Pass data to the page via props
+  return { props: { motChiecDienThoai: data } };
+}

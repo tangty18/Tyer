@@ -1,0 +1,18 @@
+.header2{
+    background-color: #292d31;
+    color:#fff;
+    height:40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item{
+    padding-right: 10px;
+}
+
+.logo{
+    padding-right: 30px;
+    font-size: 30px
+}

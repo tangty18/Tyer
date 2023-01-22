@@ -1,16 +1,9 @@
 import { Layout1 } from "../../components/layout/layout1";
 import { useState } from "react";
 import { Item } from "../../components/item/quanao/item";
-export default function ChiTiet() {
-  const [sanPham, setSanPham] = useState([
-    {
-      name: "Áo thun",
-      soLuong: 6000,
-      mauSac:"Đỏ",
-      size:30,
-      image:
-        "https://product.hstatic.net/1000357687/product/1_6f661df1e8b44c58bf89a7961b42d184_master.jpg",
-    }])
+import { fetchData } from "../../tools/axios";
+export default function ChiTiet({props}) {
+  const [sanPham, setSanPham] = useState(props.motBoDo)
     return <div>
          <div>
       {sanPham.map((item) => (
@@ -28,7 +21,13 @@ export default function ChiTiet() {
   ChiTiet.getLayout = function getLayout(page) {
     return (
       <Layout1>
-        <ChiTiet />
+        <ChiTiet props={page.props} />
       </Layout1>
     );
   };
+  export async function getServerSideProps() {
+    // Fetch data from external API
+    const { data } = await fetchData.get("/quanao/lay-1");
+    // Pass data to the page via props
+    return { props: { motBoDo:data } };
+  }

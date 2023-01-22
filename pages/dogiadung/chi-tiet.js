@@ -1,36 +1,38 @@
 import { Layout1 } from "../../components/layout/layout1";
 import { useState } from "react";
 import { Item } from "../../components/item/dogiadung/item";
-export default function ChiTiet() {
-  const [sanPham, setSanPham] = useState([
-    {
-      name: "Bếp Điện Tử",
-      soLuong: 6000,
-      doCung:100,
-      mauSac:"đỏ",
-      tanCong:135,
-      image: "https://cdn.tgdd.vn/ValueIcons/bep-tu-doi.png",
-    }])
-    return <div>
+import { fetchData } from "../../tools/axios";
+export default function ChiTiet({props}) {
+  const [sanPham, setSanPham] = useState(props.motMonDo);
+  return (
+    <div>
       <div>
-      {sanPham.map((item) => (
-        <Item
-          ten={item.name}
-          gia={item.soLuong}
-          image={item.image}
-          khoiLuong={item.khoiLuong}
-          hang={item.hang}
-          tocDo={item.tocDo}
-          gioiTinh={item.gioiTinh}
-        />
-      ))}
+        {sanPham.map((item) => (
+          <Item
+            ten={item.name}
+            gia={item.soLuong}
+            image={item.image}
+            khoiLuong={item.khoiLuong}
+            hang={item.hang}
+            tocDo={item.tocDo}
+            gioiTinh={item.gioiTinh}
+          />
+        ))}
+      </div>
     </div>
-    </div>;
-  }
-  ChiTiet.getLayout = function getLayout(page) {
-    return (
-      <Layout1>
-        <ChiTiet />
-      </Layout1>
-    );
-  };
+  );
+}
+ChiTiet.getLayout = function getLayout(page) {
+  return (
+    <Layout1>
+      <ChiTiet props={page.props}/>
+    </Layout1>
+  );
+};
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const { data } = await fetchData.get("/dogiadung/lay-1");
+  // Pass data to the page via props
+  return { props: { motMonDo: data } };
+}

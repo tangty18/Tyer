@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Layout1 } from "../../components/layout/layout1";
+import { Layout2 } from "../../components/layout/layout2";
 
 export default function DangNhap() {
   return (
@@ -16,8 +17,8 @@ export default function DangNhap() {
 }
 DangNhap.getLayout = function getLayout(page) {
   return (
-    <Layout1>
+    <Layout2>
       <DangNhap />
-    </Layout1>
+    </Layout2>
   );
 };

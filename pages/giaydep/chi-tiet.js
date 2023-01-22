@@ -1,17 +1,9 @@
 import { Layout1 } from "../../components/layout/layout1";
 import { useState } from "react";
 import { Item } from "../../components/item/giaydep/item";
-
-export default function ChiTiet() {
-  const [sanPham, setSanPham] = useState([
-    {
-      name: "Dép",
-      soLuong: 6000,
-      doben:"chó cắn không đứt",
-      phongThu:5000,
-      mauSac:"xanh",
-      image: "https://cf.shopee.vn/file/582170e1c0ba7c882fc20048cc32f549",
-    }])
+import { fetchData } from "../../tools/axios";
+export default function ChiTiet({props}) {
+  const [sanPham, setSanPham] = useState(props.motMondo)
     return <div>
       <div>
         {sanPham.map((item) => (
@@ -31,7 +23,13 @@ export default function ChiTiet() {
   ChiTiet.getLayout = function getLayout(page) {
     return (
       <Layout1>
-        <ChiTiet />
+        <ChiTiet props={page.props}/>
       </Layout1>
     );
   };
+  export async function getServerSideProps() {
+    // Fetch data from external API
+    const { data } = await fetchData.get("/giaydep/lay-1");
+    // Pass data to the page via props
+    return { props: { motMondo: data } };
+  }
