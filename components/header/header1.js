@@ -1,6 +1,8 @@
 import styles from "./header1.module.css";
 import { useRouter } from "next/router";
 
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
 export function Header1() {
   const router = useRouter();
 
@@ -80,9 +82,15 @@ export function Header1() {
       <div className={styles.item} onClick={xemDoGiaDung}>
         Xem đồ gia dụng
       </div>
-      <div className={styles.dssp} onClick={danhSachSP}>Danh Sách Sản Phẩm Yêu Thích</div>
-      <div className={styles.gio_hang} onClick={xemGioHang}>Giỏ hàng</div>
-      <div className={styles.dang_nhap} onClick={dangNhap}> Đăng nhập</div>
+      <div className={styles.dssp} onClick={danhSachSP}>
+        Danh Sách Sản Phẩm Yêu Thích
+      </div>
+      <div className={styles.gio_hang} onClick={xemGioHang}>
+        <AiOutlineShoppingCart title="Gio hang" size={30} color={"red"} />
+      </div>
+      <div className={styles.dang_nhap} onClick={dangNhap}>
+        Đăng nhập
+      </div>
     </div>
   );
 }
