@@ -7,13 +7,11 @@ import { Button1 } from "../../buttons/button1/button1";
 export function Item({ ten, gia, khoiLuong, image }) {
   const router = useRouter();
 
-  function xemChiTiet(){
+  function xemChiTiet() {
     router.push({
       pathname: "/but/chi-tiet",
     });
   }
-
-  
 
   return (
     <div className={styles.item}>
@@ -23,7 +21,7 @@ export function Item({ ten, gia, khoiLuong, image }) {
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>
-      <Button1 text={"Xem chi tiết"} xemChiTiet={xemChiTiet}/> <br/>
+      <button onClick={xemChiTiet}>Xem chi tiết </button> <br />
       <Button3 text={"Thêm vào giỏ hàng"} />
       <Button4 text={"Thêm vào yêu thích"} />
     </div>
