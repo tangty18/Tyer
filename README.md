@@ -45,3 +45,5 @@ ________
 bài tập 20/1
 1. Thêm tầng logic cho trang web
 2. thêm layout khác cho trang login
+___________
+bài tập 2

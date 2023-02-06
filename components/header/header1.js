@@ -1,8 +1,8 @@
 import styles from "./header1.module.css";
 import { useRouter } from "next/router";
-
+import {VscAccount} from "react-icons/vsc"
 import { AiOutlineShoppingCart } from "react-icons/ai";
-
+import {AiFillHeart} from "react-icons/ai"
 export function Header1() {
   const router = useRouter();
 
@@ -83,13 +83,13 @@ export function Header1() {
         Xem đồ gia dụng
       </div>
       <div className={styles.dssp} onClick={danhSachSP}>
-        Danh Sách Sản Phẩm Yêu Thích
+        <AiFillHeart title="Danh Sách Sản Phẩm Yêu Thích" size={30} color={"pink"}/>
       </div>
       <div className={styles.gio_hang} onClick={xemGioHang}>
         <AiOutlineShoppingCart title="Gio hang" size={30} color={"red"} />
       </div>
       <div className={styles.dang_nhap} onClick={dangNhap}>
-        Đăng nhập
+        <VscAccount title="Đăng Nhập" size={30} color={"white"}/>
       </div>
     </div>
   );

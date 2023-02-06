@@ -1,5 +1,6 @@
 import styles from "./footer1.module.css";
 import { useRouter } from "next/router";
+import {AiFillYoutube} from "react-icons/ai"
 export function Footer1() {
   const router = useRouter();
 
@@ -62,7 +63,7 @@ export function Footer1() {
     hỗ trợ
   </div>
   <div className={styles.donate} onClick={openInNewTab}>Donate</div>
-  <div className={styles.youtube} onClick={openInNewTab2}>Youtube</div>
+  <div className={styles.youtube} onClick={openInNewTab2}><AiFillYoutube title="Youtube" size={30}/></div>
 
 </div>
 );
