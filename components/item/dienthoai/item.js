@@ -5,6 +5,7 @@ import { Button4 } from "../../buttons/button4/button";
 import { Button1 } from "../../buttons/button1/button1";
 export function Item({ ten, gia, khoiLuong, image,hang,gioiTinh,tocDo }) {
   const router = useRouter();
+  
   function xemChiTiet(){
     router.push({
       pathname: "/dienthoai/chi-tiet",
@@ -22,7 +23,7 @@ export function Item({ ten, gia, khoiLuong, image,hang,gioiTinh,tocDo }) {
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>
-      <Button1 text={"Xem chi tiết"} xemChiTiet={xemChiTiet}/> <br/>
+      <button onClick={xemChiTiet}>Xem chi tiết </button> <br />
       <Button3 text={"Thêm vào giỏ hàng"} />
       <Button4 text={"Thêm vào yêu thích"} />
     </div>

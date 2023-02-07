@@ -15,10 +15,8 @@ export default function TestHome({ props }) {
   }
 
   function timKiem() {
-    const result = danhSachSP.filter((item) => {
-      return coTrongChuoiKhong(item.name, "");
-    });
-    setKetquaTimKiem(result);
+    const dssp = timSanPhamTheoTuKhoa(danhSachSP,input)
+    setKetquaTimKiem(dssp)
   }
   function coTrongChuoiKhong(chuoi, tuKhoa) {
     let chuoiMoi = chuoi.toLowerCase();
@@ -26,6 +24,15 @@ export default function TestHome({ props }) {
 
     return chuoiMoi.includes(tuKhoaMoi);
   }
+
+  function timSanPhamTheoTuKhoa(danhSachSanPham, tuKhoa) {
+    let ketQua = danhSachSanPham.filter((sanPham) => {
+      return coTrongChuoiKhong(sanPham.name, tuKhoa)
+    })
+    return ketQua
+  }
+
+
 
   return (
     <div>

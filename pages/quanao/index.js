@@ -13,16 +13,21 @@ export default function QuanAo({props}) {
   }
 
   function timKiem() {
-    const result = danhSachSP.filter((item) => {
-      return coTrongChuoiKhong(item.name, "");
-    });
-    setKetquaTimKiem(result);
+    const dssp = timSanPhamTheoTuKhoa(danhSachSP,input)
+    setKetquaTimKiem(dssp)
   }
   function coTrongChuoiKhong(chuoi, tuKhoa) {
     let chuoiMoi = chuoi.toLowerCase();
     let tuKhoaMoi = tuKhoa.toLowerCase();
 
     return chuoiMoi.includes(tuKhoaMoi);
+  }
+
+  function timSanPhamTheoTuKhoa(danhSachSanPham, tuKhoa) {
+    let ketQua = danhSachSanPham.filter((sanPham) => {
+      return coTrongChuoiKhong(sanPham.name, tuKhoa)
+    })
+    return ketQua
   }
 
   return (

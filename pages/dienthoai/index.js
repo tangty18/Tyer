@@ -8,21 +8,25 @@ export default function DienThoai({ props }) {
   const [ketQuaTimKiem, setKetquaTimKiem] = useState([]);
   const [input, setInput] = useState("");
 
+  function inputValue(event) {
+    setInput(event.target.value);
+  }
+  function timKiem() {
+    const dssp = timSanPhamTheoTuKhoa(danhSachSP,input)
+    setKetquaTimKiem(dssp)
+  }
   function coTrongChuoiKhong(chuoi, tuKhoa) {
     let chuoiMoi = chuoi.toLowerCase();
     let tuKhoaMoi = tuKhoa.toLowerCase();
 
     return chuoiMoi.includes(tuKhoaMoi);
   }
-  function inputValue(event) {
-    setInput(event.target.value);
-  }
 
-  function timKiem() {
-    const result = danhSachSP.filter((item) => {
-      return coTrongChuoiKhong(item.name, "");
-    });
-    setKetquaTimKiem(result);
+  function timSanPhamTheoTuKhoa(danhSachSanPham, tuKhoa) {
+    let ketQua = danhSachSanPham.filter((sanPham) => {
+      return coTrongChuoiKhong(sanPham.name, tuKhoa)
+    })
+    return ketQua
   }
 
   return (

@@ -22,7 +22,7 @@ export function Item({ ten, gia, khoiLuong, image,doCung,mauSac,tanCong }) {
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>
-      <Button1 text={"Xem chi tiết"} xemChiTiet={xemChiTiet}/> <br/>
+      <button onClick={xemChiTiet}>Xem chi tiết </button> <br />
       <Button3 text={"Thêm vào giỏ hàng"} />
       <Button4 text={"Thêm vào yêu thích"} />
     </div>
