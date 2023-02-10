@@ -5,9 +5,9 @@ import { Item } from "../../components/item/giaydep/item";
 import { fetchData } from "../../tools/axios";
 export default function GiayDep({props}) {
   const [danhSachSP, setDanhSachSP] = useState(props.danhSachGiayDep);
-
   const [ketQuaTimKiem, setKetquaTimKiem] = useState([]);
   const [input, setInput] = useState("");
+  const [hienDSSP, setHienDSSP] = useState(true);
 
   function inputValue(event) {
     setInput(event.target.value);
@@ -16,6 +16,7 @@ export default function GiayDep({props}) {
   function timKiem() {
     const dssp = timSanPhamTheoTuKhoa(danhSachSP,input)
     setKetquaTimKiem(dssp)
+    setHienDSSP(false)
   }
   function coTrongChuoiKhong(chuoi, tuKhoa) {
     let chuoiMoi = chuoi.toLowerCase();
@@ -35,9 +36,9 @@ export default function GiayDep({props}) {
     <div>
       <input onChange={inputValue}></input>
       <button onClick={timKiem}>Tìm Kiếm</button>
-      <div>
+     {!hienDSSP&& <div className={styles.ket_qua_tim_kiem}>
         {ketQuaTimKiem.map((item) => (
-          <div>
+          <div className={styles.item_tim_kiem}>
             <div>Tên:{item.name}</div>
             <div>Giá:{item.price}</div>
             <div>
@@ -45,9 +46,9 @@ export default function GiayDep({props}) {
             </div>
           </div>
         ))}
-      </div>
+      </div>}
       <hr />
-      <div className={styles.container}>
+     {hienDSSP&& <div className={styles.container}>
         {danhSachSP.map((item) => (
           <Item
             ten={item.name}
@@ -59,7 +60,7 @@ export default function GiayDep({props}) {
             phongThu={item.phongThu}
           />
         ))}
-      </div>
+      </div>}
     </div>
   );
 }

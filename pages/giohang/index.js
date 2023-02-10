@@ -2,7 +2,8 @@ import { useState } from "react";
 import styles from "./giohang.module.css";
 import { Layout1 } from "../../components/layout/layout1";
 import { Item } from "../../components/item/giohang/item";
-export default function GioHang() {  const [danhSachSP, setDanhSachSP] = useState([
+export default function GioHang() { 
+   const [danhSachSP, setDanhSachSP] = useState([
     {
       name: "Lenovo",
       soLuong: 23000,
@@ -86,7 +87,16 @@ export default function GioHang() {  const [danhSachSP, setDanhSachSP] = useStat
   }
 
   return (
+    
     <div>
+      <div className={styles.tab_button}>
+      <button className={styles.button}>Bút</button>
+      <button className={styles.button}>Đồ Gia Dụng</button>
+      <button className={styles.button}>Điện Thoại</button>
+      <button className={styles.button}>Máy Tính</button>
+      <button className={styles.button}>Quần Áo</button>
+      <button className={styles.button}>Giày Dép</button>
+      </div>
       <div className={styles.container}>
         {danhSachSP.map((item) => (
           <Item ten={item.name} gia={item.soLuong} image={item.image} />

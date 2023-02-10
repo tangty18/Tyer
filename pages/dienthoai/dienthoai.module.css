@@ -7,3 +7,13 @@
 .item{
     width: 25%;
 }
+
+.ket_qua_tim_kiem{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    flex-wrap: wrap;
+}
+.item_tim_kiem{
+    width: 20%;
+}

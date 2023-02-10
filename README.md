@@ -46,4 +46,6 @@ bài tập 20/1
 1. Thêm tầng logic cho trang web
 2. thêm layout khác cho trang login
 ___________
-bài tập 2
+bài tập 10/02
+1. Ẩn danh sách sản phẩm khi nút tìm kiếm được nhấn 
+2. Thêm layout và tabs cho trang yêu thích và giỏ hàng

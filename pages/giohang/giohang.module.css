@@ -5,3 +5,11 @@
 .item{
     width: 25%;
 }
+
+.tab_button{
+    display: flex;
+    flex-direction: row;
+}
+.button{
+    width: 100px;
+}

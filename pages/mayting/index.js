@@ -3,20 +3,20 @@ import styles from "./maytinh.module.css";
 import { Layout1 } from "../../components/layout/layout1";
 import { Item } from "../../components/item/mayting/item";
 import { fetchData } from "../../tools/axios";
-export default function MayTinh({props}) {
-  const [danhSachSP, setDanhSachSP] = useState(props.danhSachMayTing)
-    ;
-
+export default function MayTinh({ props }) {
+  const [danhSachSP, setDanhSachSP] = useState(props.danhSachMayTing);
   const [ketQuaTimKiem, setKetquaTimKiem] = useState([]);
   const [input, setInput] = useState("");
+  const [hienDSSP, setHienDSSP] = useState(true);
 
   function inputValue(event) {
     setInput(event.target.value);
   }
 
   function timKiem() {
-    const dssp = timSanPhamTheoTuKhoa(danhSachSP,input)
-    setKetquaTimKiem(dssp)
+    const dssp = timSanPhamTheoTuKhoa(danhSachSP, input);
+    setKetquaTimKiem(dssp);
+    setHienDSSP(false);
   }
   function coTrongChuoiKhong(chuoi, tuKhoa) {
     let chuoiMoi = chuoi.toLowerCase();
@@ -27,43 +27,40 @@ export default function MayTinh({props}) {
 
   function timSanPhamTheoTuKhoa(danhSachSanPham, tuKhoa) {
     let ketQua = danhSachSanPham.filter((sanPham) => {
-      return coTrongChuoiKhong(sanPham.name, tuKhoa)
-    })
-    return ketQua
+      return coTrongChuoiKhong(sanPham.name, tuKhoa);
+    });
+    return ketQua;
   }
-  return(
+  return (
     <div>
-    <input onChange={inputValue}></input>
-    <button onClick={timKiem}>Tìm Kiếm</button>
-    <div>
-      {ketQuaTimKiem.map((item) => (
-        <div>
-          <div>Tên:{item.name}</div>
-          <div>Giá:{item.price}</div>
-          <div>
-            <img src={item.image} witdth={100} height={100} />
+      <input onChange={inputValue}></input>
+      <button onClick={timKiem}>Tìm Kiếm</button>
+     {!hienDSSP&& <div className={styles.ket_qua_tim_kiem}>
+        {ketQuaTimKiem.map((item) => (
+          <div className={styles.item_tim_kiem}>
+            <div>Tên:{item.name}</div>
+            <div>Giá:{item.price}</div>
+            <div>
+              <img src={item.image} witdth={100} height={100} />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>}
+      <hr />
+      {hienDSSP&&<div className={styles.container}>
+        {danhSachSP.map((item) => (
+          <Item
+            ten={item.name}
+            gia={item.soLuong}
+            image={item.image}
+            khoiLuong={item.khoiLuong}
+            namRaMat={item.namRamat}
+            sucManh={item.sucManh}
+          />
+        ))}
+      </div>}
     </div>
-    <hr />
-    <div className={styles.container}>
-      {danhSachSP.map((item) => (
-        <Item
-          ten={item.name}
-          gia={item.soLuong}
-          image={item.image}
-          khoiLuong={item.khoiLuong}
-          namRaMat={item.namRamat}
-          sucManh={item.sucManh}
-         
-        />
-      ))}
-    </div>
-  </div>
-
-)
-  
+  );
 }
 MayTinh.getLayout = function getLayout(page) {
   return (

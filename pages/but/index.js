@@ -6,17 +6,18 @@ import { fetchData } from "../../tools/axios";
 
 export default function TestHome({ props }) {
   const [danhSachSP, setDanhSachSP] = useState(props.danhSachBut);
-
   const [ketQuaTimKiem, setKetquaTimKiem] = useState([]);
   const [input, setInput] = useState("");
+  const [hienDSSP, setHienDSSP] = useState(true);
 
   function inputValue(event) {
     setInput(event.target.value);
   }
 
   function timKiem() {
-    const dssp = timSanPhamTheoTuKhoa(danhSachSP,input)
-    setKetquaTimKiem(dssp)
+    const dssp = timSanPhamTheoTuKhoa(danhSachSP, input);
+    setKetquaTimKiem(dssp);
+    setHienDSSP(false)
   }
   function coTrongChuoiKhong(chuoi, tuKhoa) {
     let chuoiMoi = chuoi.toLowerCase();
@@ -27,20 +28,18 @@ export default function TestHome({ props }) {
 
   function timSanPhamTheoTuKhoa(danhSachSanPham, tuKhoa) {
     let ketQua = danhSachSanPham.filter((sanPham) => {
-      return coTrongChuoiKhong(sanPham.name, tuKhoa)
-    })
-    return ketQua
+      return coTrongChuoiKhong(sanPham.name, tuKhoa);
+    });
+    return ketQua;
   }
-
-
 
   return (
     <div>
       <input onChange={inputValue}></input>
       <button onClick={timKiem}>Tìm Kiếm</button>
-      <div>
+     {!hienDSSP&& <div className={styles.ket_qua_tim_kiem}>
         {ketQuaTimKiem.map((item) => (
-          <div>
+          <div className={styles.item_tim_kiem}>
             <div>Tên:{item.name}</div>
             <div>Giá:{item.price}</div>
             <div>
@@ -48,9 +47,9 @@ export default function TestHome({ props }) {
             </div>
           </div>
         ))}
-      </div>
+      </div>}
       <hr />
-      <div className={styles.container}>
+     {hienDSSP&&<div className={styles.container}>
         {danhSachSP.map((item) => (
           <Item
             ten={item.name}
@@ -59,7 +58,7 @@ export default function TestHome({ props }) {
             khoiLuong={item.khoiLuong}
           />
         ))}
-      </div>
+      </div>}
     </div>
   );
 }

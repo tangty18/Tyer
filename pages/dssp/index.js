@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./dssp.module.css";
 import { Item } from "../../components/item/giohang/item";
+import { Layout2 } from "../../components/layout/layout2";
 
 export default function DSSP() {  const [danhSachSP, setDanhSachSP] = useState([
     {
@@ -107,5 +108,13 @@ export default function DSSP() {  const [danhSachSP, setDanhSachSP] = useState([
         ))}
       </div>
     </div>
+  );
+}
+
+DSSP.getLayout = function getLayout(page) {
+  return (
+    <Layout2>
+      <DSSP  />
+    </Layout2>
   );
 }
