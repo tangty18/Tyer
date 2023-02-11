@@ -93,7 +93,7 @@ export default function GioHang() {
       <button className={styles.button}>Bút</button>
       <button className={styles.button}>Đồ Gia Dụng</button>
       <button className={styles.button}>Điện Thoại</button>
-      <button className={styles.button}>Máy Tính</button>
+      <button className={styles.button +" "+styles.button_acctive}>Máy Tính</button>
       <button className={styles.button}>Quần Áo</button>
       <button className={styles.button}>Giày Dép</button>
       </div>
