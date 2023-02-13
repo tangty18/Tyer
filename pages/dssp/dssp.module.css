@@ -4,4 +4,19 @@
 .dssp{
     flex-direction: row;
     flex-wrap: wrap;
+
+}
+
+
+.button{
+    display: flex;
+    flex-direction: row;
+
+}
+.tab_button_active{
+    background-color: antiquewhite;
+}
+.tab_button_passive{
+    width: 25%;
+    cursor: pointer;
 }

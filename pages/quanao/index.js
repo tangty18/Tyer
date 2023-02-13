@@ -40,7 +40,7 @@ export default function QuanAo({ props }) {
         {ketQuaTimKiem.map((item) => (
           <div className={styles.item_tim_kiem}>
             <div>Tên:{item.name}</div>
-            <div>Giá:{item.price}</div>
+            <div>Giá:{item.soLuong}</div>
             <div></div>
             <div>
               <img src={item.image} witdth={100} height={100} />

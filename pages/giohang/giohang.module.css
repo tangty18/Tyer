@@ -1,19 +1,13 @@
-.giohang{
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.item{
-    width: 25%;
-}
 
-.tab_button{
+.button{
     display: flex;
     flex-direction: row;
+
 }
-.button{
-    width: 100px;
-   
+.tab_button_active{
+    background-color: antiquewhite;
 }
-.button_acctive{
-    background-color: antiquewhite
+.tab_button_passive{
+    width: 25%;
+    cursor: pointer;
 }
