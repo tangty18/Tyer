@@ -56,6 +56,6 @@ bài tập 11/02
 2. khi nhấn nút nào thì load dữ liệu nút đó
 3. làm tương tự bài 1,2 nhưng cho trang yêu thích
 
-
-
-abc
+_____________________
+bài tập 16/2
+1. Thêm tầng sevice cho các thư mục trong API : but,quanao,dienthoai,dogiadung,giaydep,giohang,yeuthich,mayting.
