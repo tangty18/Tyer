@@ -49,11 +49,12 @@ export default function TestHome({ props }) {
         ))}
       </div>}
       <hr />
-     {hienDSSP&&<div className={styles.container}>
+     
+     {hienDSSP && <div className={styles.container}>
         {danhSachSP.map((item) => (
           <Item
             ten={item.name}
-            gia={item.soLuong}
+            soLuong={item.soLuong}
             image={item.image}
             khoiLuong={item.khoiLuong}
           />

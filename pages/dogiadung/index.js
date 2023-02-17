@@ -46,11 +46,16 @@ export default function DoGiaDung({props}) {
           </div>
         ))}
       </div>}
+
+
+
       <hr />
-     {hienDSSP&& <div className={styles.container}>
+
+      
+     {hienDSSP && <div className={styles.container}>
         {danhSachSP.map((item) => (
           <Item
-            ten={item.name}
+          ten={item.name}
             gia={item.soLuong}
             image={item.image}
             khoiLuong={item.khoiLuong}
