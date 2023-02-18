@@ -1,5 +1,5 @@
 export function layMot(){
-    ([
+   return ([
         {
           name: "Áo thun",
           soLuong: 6000,
@@ -12,7 +12,7 @@ export function layMot(){
 }
 
 export function layHet(){
-    ([
+  return  ([
         {
           name: "Áo Sơ Mi",
           soLuong: 23000,

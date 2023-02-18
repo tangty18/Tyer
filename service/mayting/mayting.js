@@ -1,5 +1,5 @@
 export function layMot(){
-    ([
+  return  ([
         {
           name: "ROG",
           soLuong: 6000,
@@ -15,7 +15,7 @@ export function layMot(){
 
 
 export function layHet(){
-    ([{
+  return  ([{
         name: "Lenovo",
         soLuong: 23000,
         namRamat:2009,
