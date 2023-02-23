@@ -4,7 +4,7 @@ import { Button3 } from "../../buttons/button3/button3";
 import { Button4 } from "../../buttons/button4/button";
 import { Button1 } from "../../buttons/button1/button1";
 
-export function Item({ ten, gia, khoiLuong, image }) {
+export function Item({ id,ten, soLuong, khoiLuong, image }) {
   const router = useRouter();
 
   function xemChiTiet() {
@@ -15,8 +15,9 @@ export function Item({ ten, gia, khoiLuong, image }) {
 
   return (
     <div className={styles.item}>
+      <div>ID:{id}</div>
       <div>Tên:{ten}</div>
-      <div>Giá:{gia}</div>
+      <div>Số Lượng:{soLuong}</div>
       <div>Khối lượng: {khoiLuong}</div>
       <div>
         <img src={image} width={"100px"} height={"100px"} />

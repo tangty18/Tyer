@@ -1,5 +1,5 @@
 import { layHet } from "../../../service/quanao/quanao"
-export default function handler(req, res) {
-    let toanBo = layHet()
+export default async function handler(req, res) {
+    let toanBo = await layHet()
   res.status(200).json(toanBo)
   }

@@ -59,3 +59,9 @@ bài tập 11/02
 _____________________
 bài tập 16/2
 1. Thêm tầng sevice cho các thư mục trong API : but,quanao,dienthoai,dogiadung,giaydep,giohang,yeuthich,mayting.
+___________________
+bài tâp 19/2
+1. làm vào pg4 mục đienthoai,giaydep,dogiadung,mayting,quanao
+____________________
+bài tập 21/2
+1. lấy dữ liệu từ database lấy toàn bộ (xem chi tiết để sau)
