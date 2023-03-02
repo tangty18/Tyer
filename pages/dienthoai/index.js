@@ -51,6 +51,7 @@ export default function DienThoai({ props }) {
      {hienDSSP&& <div className={styles.container}>
         {danhSachSP.map((item) => (
           <Item
+            id={item.id}
             ten={item.name}
             gia={item.soLuong}
             image={item.image}

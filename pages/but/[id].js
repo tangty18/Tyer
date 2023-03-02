@@ -27,9 +27,11 @@ ChiTiet.getLayout = function getLayout(page) {
   );
 };
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   // Fetch data from external API
-  const { data } = await fetchData.get("/but/lay-1-cay");
+  const { data } = await fetchData.post("/but/lay-1-cay",{
+    id: context.query.id,
+  });
   // Pass data to the page via props
   return { props: { motCayBut: data } };
 }

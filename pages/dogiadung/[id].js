@@ -8,7 +8,8 @@ export default function ChiTiet({props}) {
     <div>
       <div>
         {sanPham.map((item) => (
-          <Item
+          <Item 
+            id={item.id}
             ten={item.name}
             gia={item.soLuong}
             image={item.image}
@@ -30,9 +31,12 @@ ChiTiet.getLayout = function getLayout(page) {
   );
 };
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   // Fetch data from external API
-  const { data } = await fetchData.get("/dogiadung/lay-1");
+  const { data } = await fetchData.post("/dogiadung/lay-1",{
+    id: context.query.id,
+  });
+  
   // Pass data to the page via props
   return { props: { motMonDo: data } };
 }

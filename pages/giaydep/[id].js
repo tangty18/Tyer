@@ -8,6 +8,7 @@ export default function ChiTiet({props}) {
       <div>
         {sanPham.map((item) => (
           <Item
+            id={item.id}
             ten={item.name}
             gia={item.soLuong}
             image={item.image}
@@ -27,9 +28,11 @@ export default function ChiTiet({props}) {
       </Layout1>
     );
   };
-  export async function getServerSideProps() {
+  export async function getServerSideProps(context) {
     // Fetch data from external API
-    const { data } = await fetchData.get("/giaydep/lay-1");
+    const { data } = await fetchData.post("/giaydep/lay-1",{
+      id: context.query.id,
+    });
     // Pass data to the page via props
     return { props: { motMondo: data } };
   }

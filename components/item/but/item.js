@@ -9,7 +9,9 @@ export function Item({ id,ten, soLuong, khoiLuong, image }) {
 
   function xemChiTiet() {
     router.push({
-      pathname: "/but/chi-tiet",
+      pathname: "/but/[id]",
+      query:{id:id},
+
     });
   }
 

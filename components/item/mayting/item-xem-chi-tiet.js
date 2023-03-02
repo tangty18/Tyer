@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Button3 } from "../../buttons/button3/button3";
 import { Button4 } from "../../buttons/button4/button";
 
-export function Item({ ten, gia, khoiLuong, image,namRaMat,sucManh }) {
+export function Item({ id,ten, gia, khoiLuong, image,namRaMat,sucManh }) {
   const router = useRouter();
   function xemChiTiet(){
     router.push({
@@ -12,6 +12,7 @@ export function Item({ ten, gia, khoiLuong, image,namRaMat,sucManh }) {
   }
   return (
     <div className={styles.item}>
+      <div>id:{id}</div>
       <div>Tên:{ten}</div>
       <div>Giá:{gia}</div>
       <div>Khối lượng: {khoiLuong}</div>

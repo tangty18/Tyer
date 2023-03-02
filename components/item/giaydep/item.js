@@ -3,15 +3,18 @@ import { useRouter } from "next/router";
 import { Button3 } from "../../buttons/button3/button3";
 import { Button4 } from "../../buttons/button4/button";
 import { Button1 } from "../../buttons/button1/button1";
-export function Item({ ten, gia, khoiLuong, image,doBen,mauSac,phongThu }) {
+export function Item({ id,ten, gia, khoiLuong, image,doBen,mauSac,phongThu }) {
   const router = useRouter();
   function xemChiTiet(){
     router.push({
-      pathname: "/giaydep/chi-tiet",
+      pathname: "/giaydep/[id]",
+      query: {id:id},
+
     });
   }
   return (
     <div className={styles.item}>
+      <div>ID:{id}</div>
       <div>Tên:{ten}</div>
       <div>Giá:{gia}</div>
       <div>Khối lượng: {khoiLuong}</div>
