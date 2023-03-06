@@ -1,23 +1,28 @@
 import styles from "./item.module.css";
 import { useRouter } from "next/router";
-import { Button3 } from "../../buttons/button3/button3";
-import { Button4 } from "../../buttons/button4/button";
-import { Button1 } from "../../buttons/button1/button1";
+import { MdAddShoppingCart } from "react-icons/md";
+import { GiHeartPlus } from "react-icons/gi";
 
-export function Item({ id,ten, gia, khoiLuong, image,doCung,mauSac,tanCong }) {
+export function Item({ id,ten, gia, khoiLuong, image, doCung, mauSac, tanCong,}) {
   const router = useRouter();
-  function xemChiTiet(){
+  function xemChiTiet() {
     router.push({
       pathname: "/dogiadung/[id]",
-      query:{id:id},
-
+      query: { id: id },
     });
   }
+  function themVaogioHang(id) {
+    alert("Thêm Vào Giỏ Hàng " + id + "thành Công");
+  }
+  function themVaoYeuThich(id) {
+    alert("Thêm Vào Yêu Thích " + id + "thành Công");
+  }
+
   return (
     <div className={styles.item}>
-      <div>ID:{id}</div>
-      <div>Tên:{ten}</div>
-      <div>Giá:{gia}</div>
+     {/*<div>ID:{id}</div>*/}
+      <div className={styles.item_tilte}>{ten}</div>
+      <div><span className={styles.gia}>Giá</span>:<span className={styles.gia_cu_the}>{gia}</span></div>
       <div>Khối lượng: {khoiLuong}</div>
       <div>Độ Cứng:{doCung}</div>
       <div>Màu Sắc:{mauSac}</div>
@@ -26,8 +31,8 @@ export function Item({ id,ten, gia, khoiLuong, image,doCung,mauSac,tanCong }) {
         <img src={image} width={"100px"} height={"100px"} />
       </div>
       <button onClick={xemChiTiet}>Xem chi tiết </button> <br />
-      <Button3 text={"Thêm vào giỏ hàng"} />
-      <Button4 text={"Thêm vào yêu thích"} />
+      <MdAddShoppingCart onClick={()=>themVaogioHang(id)} size={30} color={"Green"}/>
+      <GiHeartPlus onClick={()=>themVaoYeuThich(id)} size={30} color={"Pink"}/>
     </div>
   );
 }
