@@ -8,7 +8,7 @@ const [username,setUsername]= useState("")
 const [password,setPassword]= useState("")
 
 function onChangeUserName(event){
-  setUserName(event.target.value)
+  setUsername(event.target.value)
 
 }
 
