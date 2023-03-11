@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Layout1 } from "../../components/layout/layout1";
 import { Layout2 } from "../../components/layout/layout2";
+import { fetchDataClientSite } from "../../tools/axios";
 
 export default function DangNhap() {
 
@@ -17,7 +18,7 @@ function onChangePassword(event){
 
 }
 
-function onLogin(event){
+async function onLogin(event){
   event.preventDefault()
 
   const data = {
@@ -25,7 +26,16 @@ function onLogin(event){
     password:password
   
   }
-  alert ('Đăng Nhập Thành Công')
+
+   const ketQuaCallAPI = await fetchDataClientSite.post("api/dangnhap/dang-nhap",data)
+  const duLieu = ketQuaCallAPI.data
+  
+  const isLoginSucces = duLieu.isLoginSucces
+  if (isLoginSucces == true){
+    alert('Đăng Nhập Thành Công')
+  } else {
+    alert('Đăng Nhập Thất Bại')
+  }
 }
 
 
@@ -34,9 +44,9 @@ function onLogin(event){
     <div>
       <form onSubmit={onLogin}>
         <label for="fname">Your Name:</label><br></br>
-        <input type="text" id="fname" name="username" onClick={onChangeUserName} /><br></br>
+        <input type="text" id="fname" name="username" onChange={onChangeUserName} /><br></br>
         <label for="lname">PassWord:</label><br />
-        <input type="text" id="lname" name="password" onClick={onChangePassword} /><br></br>
+        <input type="text" id="lname" name="password" onChange={onChangePassword} /><br></br>
         <input type="submit" value="Submit"></input>
       </form>
     </div>
