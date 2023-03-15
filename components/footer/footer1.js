@@ -1,6 +1,7 @@
 import styles from "./footer1.module.css";
 import { useRouter } from "next/router";
 import {AiFillYoutube} from "react-icons/ai"
+import Link from "next/link";
 export function Footer1() {
   const router = useRouter();
 

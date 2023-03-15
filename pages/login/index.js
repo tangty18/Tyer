@@ -31,11 +31,15 @@ async function onLogin(event){
   const duLieu = ketQuaCallAPI.data
   
   const isLoginSucces = duLieu.isLoginSucces
-  if (isLoginSucces == true){
-    alert('Đăng Nhập Thành Công')
-  } else {
-    alert('Đăng Nhập Thất Bại')
-  }
+
+   const isValid = isLoginSucces.isValid
+   if(isValid){
+    const chiaKhoa = isLoginSucces.chiaKhoa
+    localStorage.setItem("chia-khoa",chiaKhoa)
+    alert ('Đăng Nhập Thành Công')
+   }else{
+    alert ('Đăng Nhập Thất Bại')
+   }
 }
 
 
