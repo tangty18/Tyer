@@ -1,5 +1,7 @@
 import { dangNhapSevice } from "../../../service/dangnhap/dang-nhap";
+import { setCookie } from "cookies-next";
 const jwt = require("jsonwebtoken");
+
 export default async function handler(req, res) {
   const data = req.body;
   const username = data.username;
@@ -22,6 +24,11 @@ export default async function handler(req, res) {
       isValid: true,
       chiaKhoa: chiaKhoa,
     };
+    setCookie("mykey",chiaKhoa,{
+      req:req,
+      res:res
+    }
+     );
   } else {
     ketQuaDangNhap = {
       isValid: false,
