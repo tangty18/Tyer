@@ -4,9 +4,22 @@ import { VscAccount } from "react-icons/vsc";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 import Link from "next/link";
+import { fetchDataClientSite } from "../../tools/axios";
+import { useEffect, useState } from "react";
+
 export function Header1() {
   const router = useRouter();
+  const [login, setLogin] = useState(false);
+  const [ten, setTen] = useState("");
+  useEffect(() => {
+    async function getProfile() {
+      const { data } = await fetchDataClientSite.get("api/profile/hoso");
+      setLogin(data?.isLogin);
+      setTen(data?.user?.ten);
+    }
 
+    getProfile();
+  }, []);
 
   function xemGioHang() {
     router.push({
@@ -63,9 +76,12 @@ export function Header1() {
       <div className={styles.gio_hang} onClick={xemGioHang}>
         <AiOutlineShoppingCart title="Gio hang" size={30} color={"red"} />
       </div>
-      <div className={styles.dang_nhap} onClick={dangNhap}>
-        <VscAccount title="Đăng Nhập" size={30} color={"white"} />
-      </div>
+      {!login && (
+        <div className={styles.dang_nhap} onClick={dangNhap}>
+          <VscAccount title="Đăng Nhập" size={30} color={"white"} />
+        </div>
+      )}
+      {login && <div>Xin Chao,{ten} </div>}
     </div>
   );
 }
