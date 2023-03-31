@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export default function DangNhap() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const  router = useRouter();
   function onChangeUserName(event) {
     setUsername(event.target.value);
   }
@@ -34,14 +34,11 @@ export default function DangNhap() {
     if (isValid) {
       const chiaKhoa = isLoginSucces.chiaKhoa;
       localStorage.setItem("chia-khoa", chiaKhoa);
-    //  alert ('Đăng Nhập Thành Công')
-    function useRouter(){
-    router.push({
-      pathname: "/BASE_URL",
-    });
+      //alert ('Đăng Nhập Thành Công')
+      router.push({
+        pathname: "/",
+      });
     
-  }
- 
     } else {
       alert("Đăng Nhập Thất Bại");
     }
