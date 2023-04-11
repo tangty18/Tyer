@@ -8,11 +8,14 @@ export default function GioHang() {
   const [tabIndex, setTabIndex] = useState(0);
   const [ketQuaTimKiem, setKetquaTimKiem] = useState([]);
 
+  useEffect(() => {
+    async function firstReload() {
+      await nhanVaoTab(0)
 
+    }
 
-
-
-
+    firstReload()
+  }, []);
   async function nhanVaoTab(index) {
     setTabIndex(index);
 if (index==0){
