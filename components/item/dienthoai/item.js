@@ -2,7 +2,7 @@ import styles from "./item.module.css";
 import { useRouter } from "next/router";
 import {MdAddShoppingCart} from "react-icons/md"
 import {GiHeartPlus} from "react-icons/gi"
-
+import { fetchDataClientSite } from "../../../tools/axios";
 export function Item({ id,ten, gia, khoiLuong, image,hang,gioiTinh,tocDo }) {
   const router = useRouter();
   
@@ -13,10 +13,14 @@ export function Item({ id,ten, gia, khoiLuong, image,hang,gioiTinh,tocDo }) {
     });
   }
 
-  function themVaogioHang(id){
-    alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
-
-  }
+  async function themVaogioHang(id){
+    // alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
+     const {data} = await fetchDataClientSite.post("api/gio-hang/them-dien-thoai",{
+       id_product:id
+     })
+     alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
+ 
+   }
   function themVaoYeuThich(id){
     alert('Thêm Vào Yêu Thích '+ id + 'thành Công')
 

@@ -2,7 +2,7 @@ import styles from "./item.module.css";
 import { useRouter } from "next/router";
 import {MdAddShoppingCart} from "react-icons/md"
 import {GiHeartPlus} from "react-icons/gi"
-
+import { fetchDataClientSite } from "../../../tools/axios";
 
 export function Item({ id,ten, soLuong, khoiLuong, image }) {
   const router = useRouter();
@@ -15,7 +15,11 @@ export function Item({ id,ten, soLuong, khoiLuong, image }) {
     });
   }
 
-  function themVaogioHang(id){
+  async function themVaogioHang(id){
+   // alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
+    const {data} = await fetchDataClientSite.post("api/gio-hang/them-but",{
+      id_product:id
+    })
     alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
 
   }
