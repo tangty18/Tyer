@@ -21,9 +21,11 @@ export function Item({ id,ten, gia, khoiLuong, image,hang,gioiTinh,tocDo }) {
      alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
  
    }
-  function themVaoYeuThich(id){
+  async function themVaoYeuThich(id){
+    const {data} = await fetchDataClientSite.post("api/yeu-thich/them-dien-thoai",{
+      id_product:id
+    })
     alert('Thêm Vào Yêu Thích '+ id + 'thành Công')
-
   }
 
   return ( 

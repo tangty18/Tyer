@@ -23,9 +23,11 @@ export function Item({ id,ten, soLuong, khoiLuong, image }) {
     alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
 
   }
-  function themVaoYeuThich(id){
+  async function themVaoYeuThich(id){
+    const {data} = await fetchDataClientSite.post("api/yeu-thich/them-but",{
+      id_product:id
+    })
     alert('Thêm Vào Yêu Thích '+ id + 'thành Công')
-
   }
 
   return (

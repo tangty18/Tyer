@@ -1,101 +1,22 @@
-export function layMot(){
-    return   ([
-           {
-             name: "Dép",
-             soLuong: 6000,
-             doben:"chó cắn không đứt",
-             phongThu:5000,
-             mauSac:"xanh",
-             image: "https://cf.shopee.vn/file/582170e1c0ba7c882fc20048cc32f549",
-           }]
-       )
-   }
-   
-   export function layHet(){
-     return  ([
-           {
-             name: "Giày",
-             soLuong: 23000,
-             image:
-               "https://salt.tikicdn.com/cache/w1200/ts/product/71/e4/14/32f261b65904ad2ea0339bac05aca6a4.jpg",
-           },
-           {
-             name: "Dép Lê",
-             soLuong: 15000,
-             doben:"chó cắn không đứt",
-             phongThu:5000,
-             mauSac:"xanh",
-             image:
-               "https://media3.scdn.vn/img3/2019/5_7/mxelbs_simg_de2fe0_500x500_maxb.jpg",
-           },
-           {
-             name: "Dép Tổ Ong",
-             soLuong: 50000,
-             doben:"chó cắn không đứt",
-             phongThu:5000,
-             mauSac:"xanh",
-             image:
-               "https://product.hstatic.net/200000427375/product/12_d9b772845de347b5882b57a0fe2f266b.png",
-           },
-           {
-             name: "Dép lào",
-             soLuong: 50000,
-             doben:"chó cắn không đứt",
-             phongThu:5000,
-             mauSac:"xanh",
-             image: "https://cf.shopee.vn/file/4e0ee426458299c169ba0908fb4b9b9f",
-           },
-           {
-             name: "Dép",
-             soLuong: 6000,
-             doben:"chó cắn không đứt",
-             phongThu:5000,
-             mauSac:"xanh",
-             image: "https://cf.shopee.vn/file/582170e1c0ba7c882fc20048cc32f549",
-           },
-           {
-             name: "Giày",
-             soLuong: 23000,
-             doben:"chó cắn không đứt",
-             phongThu:5000,
-             mauSac:"xanh",
-             image:
-               "https://salt.tikicdn.com/cache/w1200/ts/product/71/e4/14/32f261b65904ad2ea0339bac05aca6a4.jpg",
-           },
-           {
-             name: "Dép Lê",
-             soLuong: 15000,
-             doben:"chó cắn không đứt",
-             phongThu:5000,
-             mauSac:"xanh",
-             image:
-               "https://media3.scdn.vn/img3/2019/5_7/mxelbs_simg_de2fe0_500x500_maxb.jpg",
-           },
-           {
-             name: "Dép Tổ Ong",
-             soLuong: 50000,
-             doben:"chó cắn không đứt",
-             phongThu:5000,
-             mauSac:"xanh",
-             image:
-               "https://product.hstatic.net/200000427375/product/12_d9b772845de347b5882b57a0fe2f266b.png",
-           },
-           {
-             name: "Dép lào",
-             soLuong: 50000,
-             doben:"chó cắn không đứt",
-             phongThu:5000,
-             mauSac:"xanh",
-             image: "https://cf.shopee.vn/file/4e0ee426458299c169ba0908fb4b9b9f",
-           },
-           {
-             name: "Dép",
-             soLuong: 6000,
-             doben:"chó cắn không đứt",
-             phongThu:5000,
-             mauSac:"xanh",
-             image: "https://cf.shopee.vn/file/582170e1c0ba7c882fc20048cc32f549",
-           },
-         ]   
-       )
-   }
+import conn from "../../tools/pg";
+import {v4 as uuidv4} from 'uuid';
+export async function layHet(username) {
+  let res = await conn.query(
+    `SELECT yt.id_sanpham, yt.soluong, yt.username, d.name,d.image,d."phongThu",d.id 
+    from yeuthich as yt, giaydep as d 
+    where yt.theloai = $1 and yt.username = $2 and yt.id_sanpham = d.id `,
+    ['giaydep',username]
+  );
+  return res.rows;
+}
+
+export async function themMot(username,id_product,quantity){
+  const id = uuidv4()
+  let res = await conn.query(
+   `INSERT INTO yeuthich(
+     id, theloai, id_sanpham, username, soluong)
+     VALUES ($1, $2, $3, $4, $5);`,
+     [id,'giaydep',id_product,username,quantity]
+  )
+  return res.rows;
+ }

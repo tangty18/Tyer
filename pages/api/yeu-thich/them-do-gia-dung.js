@@ -1,18 +1,17 @@
-import { layHet } from "../../../service/yeuthich/mayting"
+import { themMot } from "../../../service/yeuthich/gia-dung";
 const jwt = require("jsonwebtoken");
 export default async function handler(req, res) {
-  const id = req.body?.id;
+  const id_product = req.body?.id_product;
 
   const chiaKhoa = req.cookies?.mykey;
 
   var decoded = jwt.verify(chiaKhoa, process.env.PASS_JWT);
 
   if (chiaKhoa) {
-    const toanBo = await layHet(decoded.username);
+    const toanBo = await themMot(decoded.username, id_product, 1);
 
     res.status(200).json(toanBo);
   } else {
     res.status(200).json([]);
-    
   }
 }

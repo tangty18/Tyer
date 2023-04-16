@@ -20,8 +20,11 @@ export function Item({ id,ten, gia, khoiLuong, image, doCung, mauSac, tanCong,})
      alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
  
    }
-  function themVaoYeuThich(id) {
-    alert("Thêm Vào Yêu Thích " + id + "thành Công");
+   async function themVaoYeuThich(id){
+    const {data} = await fetchDataClientSite.post("api/yeu-thich/them-do-gia-dung",{
+      id_product:id
+    })
+    alert('Thêm Vào Yêu Thích '+ id + 'thành Công')
   }
 
   return (

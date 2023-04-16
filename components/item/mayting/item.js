@@ -19,9 +19,11 @@ export function Item({ id,ten, gia, khoiLuong, image,namRaMat,sucManh }) {
      alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
  
    }
-  function themVaoYeuThich(id){
+   async function themVaoYeuThich(id){
+    const {data} = await fetchDataClientSite.post("api/yeu-thich/them-may-ting",{
+      id_product:id
+    })
     alert('Thêm Vào Yêu Thích '+ id + 'thành Công')
-
   }
   return (
     <div className={styles.item}>
