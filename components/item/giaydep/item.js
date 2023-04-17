@@ -8,7 +8,8 @@ export function Item({ id,ten, gia, khoiLuong, image,doBen,mauSac,phongThu }) {
   function xemChiTiet(){
     router.push({
       pathname: "/giaydep/[id]",
-      query: {id:id},
+      query:{id_chi_tiet:id,
+        id:id},
 
     });
   }
@@ -38,7 +39,7 @@ export function Item({ id,ten, gia, khoiLuong, image,doBen,mauSac,phongThu }) {
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>
-      <button onClick={xemChiTiet}>Xem chi tiết </button> <br />
+      <button onClick={xemChiTiet}>Xem chi tiet </button> <br />
       <MdAddShoppingCart onClick={()=>themVaogioHang(id)} size={30} color={"Green"}/>
       <GiHeartPlus onClick={()=>themVaoYeuThich(id)} size={30} color={"Pink"}/>
     </div>

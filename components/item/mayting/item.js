@@ -8,7 +8,8 @@ export function Item({ id,ten, gia, khoiLuong, image,namRaMat,sucManh }) {
   function xemChiTiet(){
     router.push({
       pathname: "/mayting/[id]",
-      query:{id:id},
+      query:{id_chi_tiet:id,
+        id:id},
     });
   }
   async function themVaogioHang(id){

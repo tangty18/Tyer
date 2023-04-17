@@ -8,7 +8,8 @@ export function Item({ id, ten, gia, size, image, mauSac }) {
   function xemChiTiet() {
     router.push({
       pathname: "/quanao/[id]",
-      query: { id: id },
+      query:{id_chi_tiet:id,
+        id:id},
     });
   }
   async function themVaogioHang(id){

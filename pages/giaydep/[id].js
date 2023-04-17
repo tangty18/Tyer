@@ -1,6 +1,6 @@
 import { Layout1 } from "../../components/layout/layout1";
 import { useState } from "react";
-import { Item } from "../../components/item/giaydep/item";
+import { Item } from "../../components/item/giaydep/item-xem-chi-tiet";
 import { fetchData } from "../../tools/axios";
 export default function ChiTiet({props}) {
   const [sanPham, setSanPham] = useState(props.motMondo)

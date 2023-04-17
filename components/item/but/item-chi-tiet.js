@@ -6,13 +6,14 @@ import { useRouter } from "next/router";
 
 export function Item({ id,ten, gia, khoiLuong, image }) {
 
-  const router = useRouter();
+  const router = useRouter()
+  const id_san_pham = router.query.id_chi_tiet
 
   async function themVaogioHang(id){
-    // alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
-   //  const {data} = await fetchDataClientSite.post("api/gio-hang/them-chi-tiet-but",{
-    //   id_product:id
-   //  })
+   
+     const {data} = await fetchDataClientSite.post("/api/gio-hang/them-but",{
+       id_product:id
+     })
      alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
  
    }
@@ -32,8 +33,8 @@ export function Item({ id,ten, gia, khoiLuong, image }) {
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>
-      <MdAddShoppingCart onClick={()=>themVaogioHang(id)} size={30} color={"Green"}/>
-      <GiHeartPlus onClick={()=>themVaoYeuThich(id)} size={30} color={"Pink"}/>
+      <MdAddShoppingCart onClick={()=>themVaogioHang(id_san_pham)} size={30} color={"Green"}/>
+      <GiHeartPlus onClick={()=>themVaoYeuThich(id_san_pham)} size={30} color={"Pink"}/>
     </div>
   );
 }

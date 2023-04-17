@@ -8,5 +8,6 @@ export const fetchData = axios.create({
 });
 
 export const fetchDataClientSite = axios.create({
+  baseURL: process.env.BASE_URL,
   timeout: 10000,
 });

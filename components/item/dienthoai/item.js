@@ -9,7 +9,9 @@ export function Item({ id,ten, gia, khoiLuong, image,hang,gioiTinh,tocDo }) {
   function xemChiTiet(){
     router.push({
       pathname: "/dienthoai/[id]",
-      query:{id:id},
+      query:{id_chi_tiet:id,
+        id:id},
+        
     });
   }
 

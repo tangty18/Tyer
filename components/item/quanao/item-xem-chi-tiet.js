@@ -1,15 +1,26 @@
 import styles from "./item.module.css";
 import { useRouter } from "next/router";
-import { Button3 } from "../../buttons/button3/button3";
-import { Button4 } from "../../buttons/button4/button";
-
+import {MdAddShoppingCart} from "react-icons/md"
+import {GiHeartPlus} from "react-icons/gi"
+import { fetchDataClientSite } from "../../../tools/axios";
 
 export function Item({ ten, gia, size, image,mauSac }) {
   const router = useRouter();
-  function xemChiTiet(){
-    router.push({
-      pathname: "/quanao/chi-tiet",
-    });
+  const id_san_pham = router.query.id_chi_tiet
+
+  async function themVaogioHang(id){
+  
+    const {data} = await fetchDataClientSite.post("/api/gio-hang/them-quan-ao",{
+      id_product:id
+    })
+    alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
+
+  }
+  async function themVaoYeuThich(id){
+    const {data} = await fetchDataClientSite.post("/api/yeu-thich/them-quan-ao",{
+      id_product:id
+    })
+    alert('Thêm Vào Yêu Thích '+ id + 'thành Công')
   }
   return (
     <div className={styles.item}>
@@ -21,9 +32,8 @@ export function Item({ ten, gia, size, image,mauSac }) {
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>
-
-      <Button3 text={"Thêm vào giỏ hàng"} />
-      <Button4 text={"Thêm vào yêu thích"} />
+      <MdAddShoppingCart onClick={()=>themVaogioHang(id_san_pham)} size={30} color={"Green"}/>
+      <GiHeartPlus onClick={()=>themVaoYeuThich(id_san_pham)} size={30} color={"Pink"}/>
     </div>
   );
 }

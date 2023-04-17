@@ -5,23 +5,26 @@ import { GiHeartPlus } from "react-icons/gi";
 import { fetchDataClientSite } from "../../../tools/axios";
 export function Item({ id,ten, gia, khoiLuong, image, doCung, mauSac, tanCong,}) {
   const router = useRouter();
+ 
+ 
   function xemChiTiet() {
     router.push({
       pathname: "/dogiadung/[id]",
-      query: { id: id },
+      query:{id_chi_tiet:id,
+        id:id},
     });
   }
 
   async function themVaogioHang(id){
     // alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
-     const {data} = await fetchDataClientSite.post("api/gio-hang/them-do-gia-dung",{
+     const {data} = await fetchDataClientSite.post("/api/gio-hang/them-do-gia-dung",{
        id_product:id
      })
      alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
  
    }
    async function themVaoYeuThich(id){
-    const {data} = await fetchDataClientSite.post("api/yeu-thich/them-do-gia-dung",{
+    const {data} = await fetchDataClientSite.post("/api/yeu-thich/them-do-gia-dung",{
       id_product:id
     })
     alert('Thêm Vào Yêu Thích '+ id + 'thành Công')

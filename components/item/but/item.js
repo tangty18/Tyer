@@ -10,21 +10,23 @@ export function Item({ id,ten, soLuong, khoiLuong, image }) {
   function xemChiTiet() {
     router.push({
       pathname: "/but/[id]",
-      query:{id:id},
+      query:{id_chi_tiet:id,
+      id:id},
+      
 
     });
   }
 
   async function themVaogioHang(id){
-   // alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
-    const {data} = await fetchDataClientSite.post("api/gio-hang/them-but",{
+  
+    const {data} = await fetchDataClientSite.post("/api/gio-hang/them-but",{
       id_product:id
     })
     alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
 
   }
   async function themVaoYeuThich(id){
-    const {data} = await fetchDataClientSite.post("api/yeu-thich/them-but",{
+    const {data} = await fetchDataClientSite.post("/api/yeu-thich/them-but",{
       id_product:id
     })
     alert('Thêm Vào Yêu Thích '+ id + 'thành Công')
