@@ -43,6 +43,18 @@ export function Header1() {
     });
   }
 
+  function dangXuat() {
+    // retrieve all cookies
+    var Cookies = document.cookie.split(';');
+    // set past expiry to all cookies
+    for (var i = 0; i < Cookies.length; i++) {
+      document.cookie = Cookies[i] + "=; expires=" + new Date(0).toUTCString();
+    }
+    router.replace("/").then(() => router.reload());
+
+  }
+
+
   return (
     <div className={styles.header1}>
       <div onClick={veTrangChu} className={styles.logo}>
@@ -81,7 +93,15 @@ export function Header1() {
           <VscAccount title="Đăng Nhập" size={30} color={"white"} />
         </div>
       )}
-      {login && <div>Xin Chao,{ten} </div>}
+      {login && <div className={styles.user}>Xin Chao,{ten} </div>}
+
+
+
+
+
+      {login && <div onClick={dangXuat} className={styles.dangXuat}> Dang Xuat </div>}
     </div>
   );
+
+
 }
