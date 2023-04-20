@@ -4,7 +4,7 @@ import { Button3 } from "../../buttons/button3/button3";
 import { Button1 } from "../../buttons/button1/button1";
 
 
-export function Item({ ten, gia, khoiLuong, image }) {
+export function ItemGioHang({ ten, gia, khoiLuong, image }) {
   const router = useRouter();
 
   return (

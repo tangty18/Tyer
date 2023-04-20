@@ -4,7 +4,7 @@ import {MdAddShoppingCart} from "react-icons/md"
 import {GiHeartPlus} from "react-icons/gi"
 import { fetchDataClientSite } from "../../../tools/axios";
 
-export function Item({ id,ten, soLuong, khoiLuong, image }) {
+export function Item({ id,ten, soLuong, khoiLuong, image,gia }) {
   const router = useRouter();
 
   function xemChiTiet() {
@@ -38,6 +38,7 @@ export function Item({ id,ten, soLuong, khoiLuong, image }) {
       <div className={styles.item_tilte}>{ten}</div>
       <div><span className={styles.hien_co}>Hiện Có</span>: <span className={styles.so_luong}>{soLuong}</span></div>
       <div>Khối lượng: {khoiLuong}</div>
+      <div>Giá:{gia}</div>
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>

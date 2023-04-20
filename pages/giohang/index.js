@@ -1,6 +1,6 @@
 import { use, useState,useEffect } from "react";
 import styles from "./giohang.module.css";
-import { Item } from "../../components/item/giohang/item";
+import { ItemGioHang } from "../../components/item/giohang/item-gio-hang";
 import { Layout1 } from "../../components/layout/layout1";
 import { fetchDataClientSite } from "../../tools/axios";
 export default function GioHang() {
@@ -112,7 +112,7 @@ else if (index==5){
       </div>
       <div className={styles.container}>
         {danhSachSP.map((item) => (
-          <Item ten={item.name} gia={item.soLuong} image={item.image} />
+          <ItemGioHang ten={item.name} gia={item.gia} image={item.image} khoiLuong={item.khoiLuong} />
         ))}
       </div>
     </div>
