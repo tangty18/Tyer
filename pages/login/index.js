@@ -8,6 +8,7 @@ export default function DangNhap() {
   const  router = useRouter();
   function onChangeUserName(event) {
     setUsername(event.target.value);
+  
   }
 
   function onChangePassword(event) {
@@ -59,7 +60,7 @@ export default function DangNhap() {
         <label for="lname">PassWord:</label>
         <br />
         <input
-          type="text"
+          type="password"
           id="lname"
           name="password"
           onChange={onChangePassword}

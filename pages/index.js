@@ -42,6 +42,14 @@ export default function Home() {
     });
   }
 
+  function goAdmin() {
+    router.push({
+      pathname: "/them-sp",
+    });
+  }
+
+
+
   function xemChiTiet(key) {
     router.push({
       pathname: "/" + key,
@@ -65,6 +73,7 @@ export default function Home() {
       <hr/>
       <button onClick={goHome}>Đừng Nhấn</button>
       <button onClick={goHome1}>Đừng Nhấn 2</button>
+      <button onClick={goAdmin}>Go to admin</button>
     </>
   );
 }
