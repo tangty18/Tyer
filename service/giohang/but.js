@@ -21,17 +21,6 @@ export async function themMot(username,id_product,quantity){
  )
  return res.rows;
 }
-export async function themMotChiTiet(username,id_product,quantity){
-  const id = uuidv4()
-  let res = await conn.query(
-   `INSERT INTO giohang(
-     id, theloai, id_sanpham, username, soluong)
-     VALUES ($1, $2, $3, $4, $5);`,
-     [id,'but',id_product,username,quantity]
-  )
-  return res.rows;
- }
- 
 
 
 

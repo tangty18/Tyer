@@ -11,7 +11,7 @@ export function Header3() {
 
     return (
         <div className={styles.header3}>
-          <div className={styles.logo}>
+          <div className={styles.logo} onClick={veTrangChu}>
             TYER
           </div>
           <div className={styles.item}>

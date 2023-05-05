@@ -1,14 +1,19 @@
 import { Layout3 } from "../../components/layout/layout3";
 import { useState } from "react";
+import { fetchDataClientSite } from "../../tools/axios";
 export default function ThemSP() {
   const [tenSanPham, setTenSanPham] = useState("");
   const [giaSanPham, setGiaSanPham] = useState("");
   const [image, setImage] = useState("");
+  const [theLoai, setTheLoai] = useState("")
 
-function onChangeImage(){
+function onChangeImage(event){
   setImage(event.target.value)
 }
 
+function onChangeTheLoai(event){
+setTheLoai(event.target.value)
+}
 
   function onChangeTenSanPham(event) {
     setTenSanPham(event.target.value);
@@ -24,9 +29,10 @@ function onChangeImage(){
       tenSanPham: tenSanPham,
       giaSanPham: giaSanPham,
       image:image,
+      theLoai: theLoai, 
     };
 
-console.log({data})
+const {taiLieu} = await fetchDataClientSite.post("/api/themSP/themsp",data)
   }
 
   return (
@@ -55,7 +61,7 @@ console.log({data})
         <br />
         <label for="fname">The Loai</label>
         <br/>
-        <select id="country" name="country">
+        <select id="country" name="country" onChange={onChangeTheLoai}>
           <option value="">--Hãy Chọn Một Thể Loại--</option>
           <option onChange={onChangeGiaSanPham} value="but">bút</option>
           <option value="dienthoai">điện thoại</option>
