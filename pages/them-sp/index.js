@@ -6,10 +6,17 @@ export default function ThemSP() {
   const [giaSanPham, setGiaSanPham] = useState("");
   const [image, setImage] = useState("");
   const [theLoai, setTheLoai] = useState("")
+  const [soLuong, setSoLuong] = useState ("")
 
 function onChangeImage(event){
   setImage(event.target.value)
 }
+
+
+function onChangeSoLuong(event){
+  setSoLuong(event.target.value)
+}
+
 
 function onChangeTheLoai(event){
 setTheLoai(event.target.value)
@@ -30,6 +37,7 @@ setTheLoai(event.target.value)
       giaSanPham: giaSanPham,
       image:image,
       theLoai: theLoai, 
+      soLuong:soLuong,
     };
 
 const {taiLieu} = await fetchDataClientSite.post("/api/themSP/themsp",data)
@@ -80,8 +88,18 @@ const {taiLieu} = await fetchDataClientSite.post("/api/themSP/themsp",data)
           placeholder="Hình Ảnh..."
           onChange={onChangeImage}
         ></input>
-
         <br />
+        <label for="fname">Số Lượng</label>
+        <br />
+        <input
+          type="number"
+          id="lname"
+          name="number"
+          placeholder="Số Lượng..."
+          onChange={onChangeSoLuong}
+        ></input>
+        <br/>
+
         <input type="submit" value="Submit"></input>
       </form>
     </div>

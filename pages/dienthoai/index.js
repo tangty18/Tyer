@@ -53,12 +53,13 @@ export default function DienThoai({ props }) {
           <Item
             id={item.id}
             ten={item.name}
-            gia={item.soLuong}
+            gia={item.gia}
             image={item.image}
             khoiLuong={item.khoiLuong}
             hang={item.hang}
             tocDo={item.tocDo}
             gioiTinh={item.gioiTinh}
+            soLuong={item.soluong}
           />
         ))}
       </div>}

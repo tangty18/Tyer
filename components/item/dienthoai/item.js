@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import {MdAddShoppingCart} from "react-icons/md"
 import {GiHeartPlus} from "react-icons/gi"
 import { fetchDataClientSite } from "../../../tools/axios";
-export function Item({ id,ten, gia, khoiLuong, image,hang,gioiTinh,tocDo }) {
+export function Item({ id,ten, gia, khoiLuong, image,hang,gioiTinh,tocDo,soLuong }) {
   const router = useRouter();
   
   function xemChiTiet(){
@@ -36,6 +36,7 @@ export function Item({ id,ten, gia, khoiLuong, image,hang,gioiTinh,tocDo }) {
       <div className={styles.item_tilte}>{ten}</div>
       <div><span className={styles.gia}>Giá</span>:<span className={styles.gia_cu_the}>{gia}</span></div>
       <div>Khối lượng: {khoiLuong}</div>
+      <div>Số Lượng: {soLuong}</div>
       <div>Hãng:{hang}</div>
       <div>Giới Tính:{gioiTinh}</div>
       <div>Tốc Độ:{tocDo}</div>

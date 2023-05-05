@@ -9,49 +9,53 @@ export async function themHang(
   doCung,
   doBen,
   sucManh,
-  mauSac
+  mauSac,
+  soLuong
 ) {
+  console.log(soLuong)
   let res;
   if (theLoai == "but") {
     res = await conn.query(
       `INSERT INTO but(
-        id, name, image, gia)
-        VALUES ($1, $2, $3, $4);`,
-      [id, tenSanPham, image, gia]
+        id, name, image, gia,soluong)
+        VALUES ($1, $2, $3, $4,$6);`,
+      [id, tenSanPham, image, gia,soLuong]
     );
   } else if (theLoai == "dienthoai") {
     res = await conn.query(
       `INSERT INTO dienthoai(
-        id, name, image, gia, hang)
-        VALUES ($1, $2, $3, $4, $5);`,
-      [id, tenSanPham, image, gia,hang]
+        id, name, image, gia, hang,soluong)
+        VALUES ($1, $2, $3, $4, $5,$6);`,
+      [id, tenSanPham, image, gia, hang,soLuong]
     );
+    
   } else if (theLoai == "dogiadung") {
     res = await conn.query(
       `INSERT INTO dogiadung(
-    id, name, image, gia,doCung)
-    VALUES ($1, $2, $3, $4,$5);`,
-      [id, tenSanPham, image, gia, doCung]
+    id, name, image, gia,doCung,soluong)
+    VALUES ($1, $2, $3, $4,$5,$6);`,
+      [id, tenSanPham, image, gia, doCung,soLuong]
     );
   } else if (theLoai == "mayting") {
     res = await conn.query(
       `INSERT INTO mayting(
-        id, name, image, gia,sucmanh)
-        VALUES ($1, $2, $3, $4,$5);`,
+        id, name, image, gia,sucmanh,soluong)
+        VALUES ($1, $2, $3, $4,$5,$6);`,
       [id, tenSanPham, image, gia, sucManh]
     );
   } else if (theLoai == "quanao") {
     res = await conn.query(
       `INSERT INTO quanao(
-        id, name, image, gia,mauSac)
-        VALUES ($1, $2, $3, $4,$5);`[(id, tenSanPham, image, gia, mauSac)]
+        id, name, image, gia,mauSac,soluong)
+        VALUES ($1, $2, $3, $4,$5,$6);`
+        [(id, tenSanPham, image, gia, mauSac,soLuong)]
     );
   } else {
     res = await conn.query(
       `INSERT INTO giaydep(
-        id, name, image, gia,doBen)
-        VALUES ($1, $2, $3, $4,$5);`,
-      [id, tenSanPham, image, gia, doBen]
+        id, name, image, gia,doBen,soluong)
+        VALUES ($1, $2, $3, $4,$5,$6);`,
+      [id, tenSanPham, image, gia, doBen,soLuong]
     );
   }
   return res.rows;

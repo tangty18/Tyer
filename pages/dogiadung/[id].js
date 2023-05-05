@@ -11,7 +11,7 @@ export default function ChiTiet({props}) {
           <Item 
             id={item.id}
             ten={item.name}
-            gia={item.soLuong}
+            gia={item.gia}
             image={item.image}
             khoiLuong={item.khoiLuong}
             hang={item.hang}

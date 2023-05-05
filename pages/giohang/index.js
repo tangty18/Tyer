@@ -8,6 +8,7 @@ export default function GioHang() {
   const [tabIndex, setTabIndex] = useState(0);
   const [ketQuaTimKiem, setKetquaTimKiem] = useState([]);
 
+
   useEffect(() => {
     async function firstReload() {
       await nhanVaoTab(0)
@@ -44,6 +45,8 @@ else if (index==5){
 }
 
   }
+
+
 
   return (
     <div>
@@ -111,10 +114,10 @@ else if (index==5){
         
       </div>
       <div className={styles.container}>
-        {danhSachSP.map((item) => (
-          <ItemGioHang ten={item.name} gia={item.gia} image={item.image} khoiLuong={item.khoiLuong} />
-        ))}
+        {[]}
       </div>
+	  
+		<div>tổng tiền : {0} </div>
     </div>
   );
 }

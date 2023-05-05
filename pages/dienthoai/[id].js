@@ -16,6 +16,7 @@ export default function ChiTiet({props}) {
           hang={item.hang}
           tocDo={item.tocDo}
           gioiTinh={item.gioiTinh}
+          soLuong={item.soLuong}
         />
       ))}
     </div>
