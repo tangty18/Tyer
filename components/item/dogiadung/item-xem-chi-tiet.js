@@ -30,7 +30,7 @@ export function Item({id, ten, gia, khoiLuong, image,doCung,mauSac,tanCong }) {
       <div>Giá:{gia}</div>
       <div>Khối lượng: {khoiLuong}</div>
       <div>Độ Cứng:{doCung}</div>
-      <div> 11111:{mauSac}</div>
+      <div> Màu Sắc:{mauSac}</div>
       <div>Tấn Công:{tanCong}</div>
       <div>
         <img src={image} width={"100px"} height={"100px"} />

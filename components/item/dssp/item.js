@@ -4,7 +4,7 @@ import { Button3 } from "../../buttons/button3/button3";
 import { Button1 } from "../../buttons/button1/button1";
 
 
-export function Item({ ten, gia, khoiLuong, image }) {
+export function Item({ ten, gia, khoiLuong, image,soluong }) {
   const router = useRouter();
 
   return (
@@ -12,6 +12,7 @@ export function Item({ ten, gia, khoiLuong, image }) {
       <div>Tên:{ten}</div>
       <div>Giá:{gia}</div>
       <div>Khối lượng: {khoiLuong}</div>
+      <div>Số Luọng{soluong}</div>
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>

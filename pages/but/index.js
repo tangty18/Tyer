@@ -57,6 +57,7 @@ export default function TestHome({ props }) {
             ten={item.name}
             soLuong={item.soLuong}
             image={item.image}
+            gia={item.gia}
             khoiLuong={item.khoiLuong}
           />
         ))}

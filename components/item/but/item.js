@@ -19,7 +19,7 @@ export function Item({ id,ten, soLuong, khoiLuong, image,gia }) {
 
   async function themVaogioHang(id){
   
-    const {data} = await fetchDataClientSite.post("/api/gio-hang/them-but",{
+    const {data} = await fetchDataClientSite.post("/api/gio-hang/them-chi-tiet-but",{
       id_product:id
     })
     alert('Thêm Vào Giỏ Hàng '+ id + 'thành Công')
@@ -36,9 +36,10 @@ export function Item({ id,ten, soLuong, khoiLuong, image,gia }) {
     <div className={styles.item}>
       {/*<div>ID:{id}</div>*/}
       <div className={styles.item_tilte}>{ten}</div>
-      <div><span className={styles.hien_co}>Hiện Có</span>: <span className={styles.so_luong}>{soLuong}</span></div>
+      <div><span className={styles.hien_co}>Hiện Có</span>: <span className={styles.so_luong}>{gia}</span></div>
       <div>Khối lượng: {khoiLuong}</div>
       <div>Giá:{gia}</div>
+      <div>Số Lượng:{soLuong}</div>
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>

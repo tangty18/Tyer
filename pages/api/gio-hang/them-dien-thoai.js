@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       var decoded = jwt.verify(chiaKhoa, process.env.PASS_JWT);
     
       if (chiaKhoa) {
-        const toanBo = await layHet(decoded.username);
+        const toanBo = await themMot(decoded.username,id_product,1);
     
         res.status(200).json(toanBo);
       } else {

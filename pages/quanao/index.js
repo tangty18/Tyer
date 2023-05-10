@@ -54,10 +54,11 @@ export default function QuanAo({ props }) {
           <Item
             id={item.id}
             ten={item.name}
-            gia={item.soLuong}
+            gia={item.gia}
             image={item.image}
             size={item.size}
             mauSac={item.mauSac}
+            soluong={item.soLuong}
           />
         ))}
       </div>}

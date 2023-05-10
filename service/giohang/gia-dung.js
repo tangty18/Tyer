@@ -2,10 +2,10 @@ import conn from "../../tools/pg";
 import {v4 as uuidv4} from 'uuid';
 export async function layHet(username) {
   let res = await conn.query(
-    `SELECT gh.id_sanpham, gh.soluong, gh.username, gd.name,gd.image,gd."doCung",gd.id 
+    `SELECT gh.id_sanpham, gh.soluong, gh.username, gd.name,gd.image,gd."doCung",gd.id,gd.soluong
     from giohang as gh, dogiadung as gd 
     where gh.theloai = $1 and gh.username = $2 and gh.id_sanpham = gd.id `,
-    ['dogiadung',username]
+    ['dogiadung',username]  
   );
   return res.rows;
 }

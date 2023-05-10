@@ -40,7 +40,7 @@ export default function DienThoai({ props }) {
         {ketQuaTimKiem.map((item) => (
           <div className={styles.item_tim_kiem}>
             <div>Tên:{item.name}</div>
-            <div>Giá:{item.price}</div>
+            <div>Giá:{item.gia}</div>
             <div>
               <img src={item.image} witdth={100} height={100} />
             </div>
@@ -55,7 +55,7 @@ export default function DienThoai({ props }) {
             ten={item.name}
             gia={item.gia}
             image={item.image}
-            khoiLuong={item.khoiLuong}
+            khoiluong={item.khoiluong}
             hang={item.hang}
             tocDo={item.tocDo}
             gioiTinh={item.gioiTinh}

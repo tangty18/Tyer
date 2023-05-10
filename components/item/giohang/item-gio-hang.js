@@ -1,18 +1,18 @@
 import styles from "./item.module.css";
 import { useRouter } from "next/router";
-import { Button3 } from "../../buttons/button3/button3";
-import { Button1 } from "../../buttons/button1/button1";
 
 
-export function ItemGioHang({ ten, gia, khoiLuong, image}) {
+export function ItemGioHang({soluong, ten, gia, khoiluong, image}) {
   const router = useRouter();
-
+console.log(khoiluong)
   return (
     <div className={styles.item}>
       <div>Tên:{ten}</div>
       <div>Giá:{gia}</div>
-      <div>Khối lượng: {khoiLuong}</div>
-      <div>Tiền: {gia * khoiLuong}</div>
+      <div>Khối lượng: {khoiluong}</div>
+      <div>Số Lượng:{soluong}</div>
+      <div>Tiền: {gia * soluong}</div>
+
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>

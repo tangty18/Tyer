@@ -11,7 +11,7 @@ export async function layHet(username) {
 
   return res.rows;
 }
-export async function themMot(username,id_product,quantity){
+export async function themMotChiTiet(username,id_product,quantity){
  const id = uuidv4()
  let res = await conn.query(
   `INSERT INTO giohang(

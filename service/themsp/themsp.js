@@ -32,9 +32,9 @@ export async function themHang(
   } else if (theLoai == "dogiadung") {
     res = await conn.query(
       `INSERT INTO dogiadung(
-    id, name, image, gia,doCung,soluong)
+    id, name, image, soluong,doCung,gia)
     VALUES ($1, $2, $3, $4,$5,$6);`,
-      [id, tenSanPham, image, gia, doCung,soLuong]
+      [id, tenSanPham, image, soLuong, doCung,gia]
     );
   } else if (theLoai == "mayting") {
     res = await conn.query(

@@ -112,7 +112,7 @@ return (
     </div>
     <div className={styles.container}>
       {danhSachSP.map((item) => (
-        <Item ten={item.name} gia={item.soLuong} image={item.image} />
+        <Item ten={item.name} gia={item.gia} image={item.image} soluong={item.soluong} khoiluong={item.khoiluong} />
       ))}
     </div>
   </div>

@@ -39,7 +39,8 @@ export default function DoGiaDung({props}) {
         {ketQuaTimKiem.map((item) => (
           <div className={styles.item_tim_kiem}>
             <div>Tên:{item.name}</div>
-            <div>Giá:{item.price}</div>
+            <div>Giá:{item.gia}</div>
+            <div>Số Lượng:{item.soluong} </div>
             <div>
               <img src={item.image} witdth={100} height={100} />
             </div>
@@ -56,13 +57,15 @@ export default function DoGiaDung({props}) {
         {danhSachSP.map((item) => (
           <Item
             id={item.id}
-          ten={item.name}
-            gia={item.soLuong}
+            ten={item.name}
+            gia={item.gia}
             image={item.image}
             khoiLuong={item.khoiLuong}
             doCung={item.doCung}
             mauSac={item.mauSac}
             tanCong={item.tanCong}
+            soluong={item.soluong}
+
           />
         ))}
       </div>}

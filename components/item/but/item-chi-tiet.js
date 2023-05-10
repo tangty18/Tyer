@@ -29,7 +29,7 @@ export function Item({ id,ten, gia, khoiLuong, image }) {
       {/*<div>ID:{id}</div>*/}
       <div>Tên:{ten}</div>
       <div>Giá:{gia}</div>
-      <div>Khối lượng: {khoiLuong}</div>
+      <div>Số lượng:{soluong}</div>
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>

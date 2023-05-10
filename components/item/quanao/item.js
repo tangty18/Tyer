@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { MdAddShoppingCart } from "react-icons/md";
 import { GiHeartPlus } from "react-icons/gi";
 import { fetchDataClientSite } from "../../../tools/axios";
-export function Item({ id, ten, gia, size, image, mauSac }) {
+export function Item({ id, ten, gia, size, image, mauSac,soluong }) {
   const router = useRouter();
   function xemChiTiet() {
     router.push({
@@ -33,6 +33,7 @@ export function Item({ id, ten, gia, size, image, mauSac }) {
       <div><span className={styles.gia}>Giá</span>:<span className={styles.gia_cu_the}>{gia}</span></div>
       <div>Màu Sắc: {mauSac}</div>
       <div>Size:{size}</div>
+      <div>Giá :{gia}</div>
       <div>
         <img src={image} width={"100px"} height={"100px"} />
       </div>
