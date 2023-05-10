@@ -51,14 +51,13 @@ export default function GiayDep({props}) {
      {hienDSSP&& <div className={styles.container}>
         {danhSachSP.map((item) => (
           <Item
-            id={item.id}
-            ten={item.name}
-            gia={item.soLuong}
-            image={item.image}
-            khoiLuong={item.khoiLuong}
-            doBen={item.doBen}
-            mauSac={item.mauSac}
-            phongThu={item.phongThu}
+          id={item.masp}
+          ten={item.ten}
+          soluong={item.soluong}
+          image={item.hinhanh}
+          gia={item.gia}
+          khoiLuong={0}
+          
           />
         ))}
       </div>}
@@ -75,7 +74,7 @@ GiayDep.getLayout = function getLayout(page) {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const { data } = await fetchData.get("/giaydep/lay-toan-bo");
+  const { data } = await fetchData.post("/sanpham/get-all",{theloai:"giaydep"});
   // Pass data to the page via props
   return { props: { danhSachGiayDep: data } };
 }

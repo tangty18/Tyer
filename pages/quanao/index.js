@@ -52,14 +52,14 @@ export default function QuanAo({ props }) {
      {hienDSSP&& <div className={styles.container}>
         {danhSachSP.map((item) => (
           <Item
-            id={item.id}
-            ten={item.name}
-            gia={item.gia}
-            image={item.image}
-            size={item.size}
-            mauSac={item.mauSac}
-            soluong={item.soLuong}
+          id={item.masp}
+          ten={item.ten}
+          soluong={item.soluong}
+          image={item.hinhanh}
+          gia={item.gia}
+          khoiLuong={0}
           />
+         
         ))}
       </div>}
     </div>
@@ -75,7 +75,7 @@ QuanAo.getLayout = function getLayout(page) {
 };
 export async function getServerSideProps() {
   // Fetch data from external API
-  const { data } = await fetchData.get("/quanao/lay-toan-bo");
+  const { data } = await fetchData.post("/sanpham/get-all",{theloai:"quanao"});
   // Pass data to the page via props
   return { props: { danhSachQuanAo: data } };
 }

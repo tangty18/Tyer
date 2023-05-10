@@ -50,13 +50,12 @@ export default function MayTinh({ props }) {
       {hienDSSP&&<div className={styles.container}>
         {danhSachSP.map((item) => (
           <Item
-            id={item.id}
-            ten={item.name}
-            gia={item.soLuong}
-            image={item.image}
-            khoiLuong={item.khoiLuong}
-            namRaMat={item.namRamat}
-            sucManh={item.sucManh}
+          id={item.masp}
+          ten={item.ten}
+          soluong={item.soluong}
+          image={item.hinhanh}
+          gia={item.gia}
+          khoiLuong={0}
           />
         ))}
       </div>}
@@ -72,7 +71,7 @@ MayTinh.getLayout = function getLayout(page) {
 };
 export async function getServerSideProps() {
   // Fetch data from external API
-  const { data } = await fetchData.get("/mayting/lay-toan-bo");
+  const { data } = await fetchData.post("/sanpham/get-all",{theloai:"maytinh"});
   // Pass data to the page via props
   return { props: { danhSachMayTing: data } };
 }

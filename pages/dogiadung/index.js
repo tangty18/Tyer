@@ -56,15 +56,12 @@ export default function DoGiaDung({props}) {
      {hienDSSP && <div className={styles.container}>
         {danhSachSP.map((item) => (
           <Item
-            id={item.id}
-            ten={item.name}
-            gia={item.gia}
-            image={item.image}
-            khoiLuong={item.khoiLuong}
-            doCung={item.doCung}
-            mauSac={item.mauSac}
-            tanCong={item.tanCong}
-            soluong={item.soluong}
+          id={item.masp}
+          ten={item.ten}
+          soluong={item.soluong}
+          image={item.hinhanh}
+          gia={item.gia}
+          khoiLuong={0}
 
           />
         ))}
@@ -83,7 +80,7 @@ DoGiaDung.getLayout = function getLayout(page) {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const { data } = await fetchData.get("/dogiadung/lay-toan-bo");
+  const { data } = await fetchData.post("/sanpham/get-all",{theloai:"dogiadung"});
   // Pass data to the page via props
   return { props: { danhSachDoGiaDung: data } };
 }

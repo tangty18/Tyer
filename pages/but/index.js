@@ -53,12 +53,12 @@ export default function TestHome({ props }) {
      {hienDSSP && <div className={styles.container}>
         {danhSachSP.map((item) => (
           <Item
-            id={item.id}
-            ten={item.name}
-            soLuong={item.soLuong}
-            image={item.image}
+            id={item.masp}
+            ten={item.ten}
+            soluong={item.soluong}
+            image={item.hinhanh}
             gia={item.gia}
-            khoiLuong={item.khoiLuong}
+            khoiLuong={0}
           />
         ))}
       </div>}
@@ -76,7 +76,7 @@ TestHome.getLayout = function getLayout(page) {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const { data } = await fetchData.get("/but/lay-toan-bo");
+  const { data } = await fetchData.post("/sanpham/get-all",{theloai:"but"});
   // Pass data to the page via props
   return { props: { danhSachBut: data } };
 }
