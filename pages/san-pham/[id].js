@@ -1,22 +1,18 @@
 import { Layout1 } from "../../components/layout/layout1";
 import { useState } from "react";
-import { Item } from "../../components/item/dogiadung/item-xem-chi-tiet";
 import { fetchData } from "../../tools/axios";
-export default function ChiTiet({props}) {
-  const [sanPham, setSanPham] = useState(props.motMonDo);
+import { Item } from "../../components/item/item-chi-tiet";
+export default function ChiTiet({ props }) {
+  const [sanPham, setSanPham] = useState(props.motCayBut);
   return (
     <div>
       <div>
         {sanPham.map((item) => (
-          <Item 
-            id={item.id}
-            ten={item.name}
+          <Item
+            ten={item.ten}
             gia={item.gia}
-            image={item.image}
-            khoiLuong={item.khoiLuong}
-            hang={item.hang}
-            tocDo={item.tocDo}
-            gioiTinh={item.gioiTinh}
+            image={item.hinhanh}
+            khoiLuong={item.khoiLuong || 0}
             soluong={item.soluong}
           />
         ))}
@@ -27,17 +23,20 @@ export default function ChiTiet({props}) {
 ChiTiet.getLayout = function getLayout(page) {
   return (
     <Layout1>
-      <ChiTiet props={page.props}/>
+      <ChiTiet props={page.props} />
     </Layout1>
   );
 };
 
 export async function getServerSideProps(context) {
   // Fetch data from external API
-  const { data } = await fetchData.post("/dogiadung/lay-1",{
+ 
+  const { data } = await fetchData.post("/sanpham/get-one",{
     id: context.query.id,
+    type:context.query.type
   });
-  
+
+
   // Pass data to the page via props
-  return { props: { motMonDo: data } };
+  return { props: { motCayBut: data } };
 }

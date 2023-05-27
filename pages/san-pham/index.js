@@ -1,7 +1,7 @@
-import { useState } from "react";
-import styles from "./but.module.css";
+import { useEffect, useState } from "react";
+import styles from "./sanpham.module.css";
 import { Layout1 } from "../../components/layout/layout1";
-import { Item } from "../../components/item/but/item";
+import { Item } from "../../components/item/item";
 import { fetchData } from "../../tools/axios";
 
 export default function TestHome({ props }) {
@@ -10,6 +10,10 @@ export default function TestHome({ props }) {
   const [input, setInput] = useState("");
   const [hienDSSP, setHienDSSP] = useState(true);
 
+  useEffect(()=>{
+    setDanhSachSP(props.danhSachBut)
+  },[props.danhSachBut])
+
   function inputValue(event) {
     setInput(event.target.value);
   }
@@ -17,7 +21,7 @@ export default function TestHome({ props }) {
   function timKiem() {
     const dssp = timSanPhamTheoTuKhoa(danhSachSP, input);
     setKetquaTimKiem(dssp);
-    setHienDSSP(false)
+    setHienDSSP(false);
   }
   function coTrongChuoiKhong(chuoi, tuKhoa) {
     let chuoiMoi = chuoi.toLowerCase();
@@ -37,31 +41,35 @@ export default function TestHome({ props }) {
     <div>
       <input onChange={inputValue}></input>
       <button onClick={timKiem}>Tìm Kiếm</button>
-     {!hienDSSP&& <div className={styles.ket_qua_tim_kiem}>
-        {ketQuaTimKiem.map((item) => (
-          <div className={styles.item_tim_kiem}>
-            <div>Tên:{item.name}</div>
-            <div>Số Lượng:{item.soLuong}</div>
-            <div>
-              <img src={item.image} witdth={100} height={100} />
+      {!hienDSSP && (
+        <div className={styles.ket_qua_tim_kiem}>
+          {ketQuaTimKiem.map((item) => (
+            <div className={styles.item_tim_kiem}>
+              <div>Tên:{item.name}</div>
+              <div>Số Lượng:{item.soLuong}</div>
+              <div>
+                <img src={item.image} witdth={100} height={100} />
+              </div>
             </div>
-          </div>
-        ))}
-      </div>}
+          ))}
+        </div>
+      )}
       <hr />
-     
-     {hienDSSP && <div className={styles.container}>
-        {danhSachSP.map((item) => (
-          <Item
-            id={item.masp}
-            ten={item.ten}
-            soluong={item.soluong}
-            image={item.hinhanh}
-            gia={item.gia}
-            khoiLuong={0}
-          />
-        ))}
-      </div>}
+
+      {hienDSSP && (
+        <div className={styles.container}>
+          {danhSachSP.map((item) => (
+            <Item
+              id={item.masp}
+              ten={item.ten}
+              soluong={item.soluong}
+              image={item.hinhanh}
+              gia={item.gia}
+              khoiLuong={0}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -74,9 +82,13 @@ TestHome.getLayout = function getLayout(page) {
   );
 };
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+  const type = context.query.type;
   // Fetch data from external API
-  const { data } = await fetchData.post("/sanpham/get-all",{theloai:"but"});
+
+  const { data } = await fetchData.post("/sanpham/get-all", { theloai: type });
   // Pass data to the page via props
+
+
   return { props: { danhSachBut: data } };
 }

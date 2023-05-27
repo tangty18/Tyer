@@ -45,38 +45,92 @@ export function Header1() {
 
   function dangXuat() {
     // retrieve all cookies
-    var Cookies = document.cookie.split(';');
+    var Cookies = document.cookie.split(";");
     // set past expiry to all cookies
     for (var i = 0; i < Cookies.length; i++) {
       document.cookie = Cookies[i] + "=; expires=" + new Date(0).toUTCString();
     }
     router.replace("/").then(() => router.reload());
-
   }
 
+  function xemDienThoai() {
+    router.push({
+      pathname: `/san-pham`,
+      query: {
+        type: "dienthoai", // pass the id
+      },
+    })
+    
+    
+  }
+
+  function xemBut() {
+    router.push({
+      pathname: `/san-pham`,
+      query: {
+        type: "but", // pass the id
+      },
+    });
+  }
+  function xemDoGiaDung() {
+    router.push({
+      pathname: `/san-pham`,
+      query: {
+        type: "dogiadung", // pass the id
+      },
+    });
+   
+  }
+  function xemGiayDep() {
+    router.push({
+      pathname: `/san-pham`,
+      query: {
+        type: "giaydep", // pass the id
+      },
+    });
+   
+  }
+  function xemMayTinh() {
+    router.push({
+      pathname: `/san-pham`,
+      query: {
+        type: "maytinh", // pass the id
+      },
+    });
+
+  }
+  function xemQuanAo() {
+    router.push({
+      pathname: `/san-pham`,
+      query: {
+        type: "quanao", // pass the id
+      },
+    });
+
+  }
 
   return (
     <div className={styles.header1}>
       <div onClick={veTrangChu} className={styles.logo}>
         TYER
       </div>
-      <div className={styles.item}>
-        <Link href="/but">Xem Bút</Link>
+      <div className={styles.item} onClick={xemBut}>
+        Xem Bút
       </div>
-      <div className={styles.item}>
-        <Link href="/dienthoai">Xem Điện Thoại</Link>
+      <div className={styles.item} onClick={xemDienThoai}>
+        Xem Điện Thoại
       </div>
-      <div className={styles.item}>
-        <Link href="/dogiadung">Xem Đồ Gia Dụng</Link>
+      <div className={styles.item} onClick={xemDoGiaDung}>
+        Xem Đồ Gia Dụng
       </div>
-      <div className={styles.item}>
-        <Link href="/giaydep">Xem Giày Dép</Link>
+      <div className={styles.item} onClick={xemGiayDep}>
+        Xem Giày Dép
       </div>
-      <div className={styles.item}>
-        <Link href="/mayting">Xem Máy Tính</Link>
+      <div className={styles.item} onClick={xemMayTinh}>
+        Xem Máy Tính
       </div>
-      <div className={styles.item}>
-        <Link href="/quanao">Xem Quần Áo</Link>
+      <div className={styles.item} onClick={xemQuanAo}>
+        Xem Quần Áo
       </div>
       <div className={styles.dssp} onClick={danhSachSP}>
         <AiFillHeart
@@ -95,13 +149,12 @@ export function Header1() {
       )}
       {login && <div className={styles.user}>Xin Chao,{ten} </div>}
 
-
-
-
-
-      {login && <div onClick={dangXuat} className={styles.dangXuat}> Dang Xuat </div>}
+      {login && (
+        <div onClick={dangXuat} className={styles.dangXuat}>
+          {" "}
+          Dang Xuat{" "}
+        </div>
+      )}
     </div>
   );
-
-
 }

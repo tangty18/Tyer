@@ -1,17 +1,18 @@
-import { themMotChiTiet } from "../../../service/giohang/but"; 
+import { themMotChiTiet } from "../../../service/giohang/but";
 const jwt = require("jsonwebtoken");
 export default async function handler(req, res) {
     const id_product = req.body?.id_product;
   
-    
     try {
     
+      console.log(id_product)
+
       const chiaKhoa = req.cookies?.mykey;
     
       var decoded = jwt.verify(chiaKhoa, process.env.PASS_JWT);
     
       if (chiaKhoa) {
-        const toanBo = await themMot(decoded.username,id_product,1);
+        const toanBo = await layHet(decoded.username);
     
         res.status(200).json(toanBo);
       } else {
