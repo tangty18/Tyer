@@ -19,7 +19,7 @@ export function Item({ id, ten, soLuong, khoiLuong, image, gia }) {
 
   async function themVaogioHang(id) {
     const { data } = await fetchDataClientSite.post(
-      "/api/gio-hang/them-chi-tiet-but",
+      "/api/gio-hang/giohang",
       {
         id_product: id,
       }
