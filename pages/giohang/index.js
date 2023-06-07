@@ -37,6 +37,7 @@ export default function GioHang() {
           image={item.hinhanh}
           soluong={item.soluong}
           gia={item.gia}
+          masp={item.masp}
         />
       );
     }

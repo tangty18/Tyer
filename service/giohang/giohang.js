@@ -22,3 +22,7 @@ export async function layHet(username) {
     );
     return res.rows;
   }
+
+  export async function capNhat({id_sanpham,soluong}){
+    return []
+  }
