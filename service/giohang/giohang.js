@@ -15,9 +15,9 @@ export async function themSanPhamVaoGioHang(username,id_product,quantity){
 
 export async function layHet(username) {
     let res = await conn.query(
-      `SELECT *
-       FROM giohang
-       WHERE username = $1`,
+      `SELECT s.hinhanh,s.gia,s.ten,g.soluong
+       FROM giohang as g, sanpham as s
+       WHERE username = $1 AND g.id_sanpham = s.masp`,
       [username]
     );
     return res.rows;

@@ -17,36 +17,15 @@ export default function GioHang() {
 
   useEffect(() => {
     async function firstReload() {
-      await nhanVaoTab(0);
-    }
+      const result = await fetchDataClientSite.get("/api/gio-hang/giohang")
+
+      const {data} = result 
+      
+      setDanhSachSP(data)
+       }
 
     firstReload();
   }, []);
-  async function nhanVaoTab(index) {
-    setTabIndex(index);
-    if (index == 0) {
-      const { data } = await fetchDataClientSite.get("api/gio-hang/but");
-      setDanhSachSP(data);
-    } else if (index == 1) {
-      const { data } = await fetchDataClientSite.get(
-        "api/gio-hang/do-gia-dung"
-      );
-      setDanhSachSP(data);
-    } else if (index == 2) {
-      const { data } = await fetchDataClientSite.get("api/gio-hang/dien-thoai");
-      setDanhSachSP(data);
-    } else if (index == 3) {
-      const { data } = await fetchDataClientSite.get("api/gio-hang/may-ting");
-      setDanhSachSP(data);
-    } else if (index == 4) {
-      const { data } = await fetchDataClientSite.get("api/gio-hang/quan-ao");
-      setDanhSachSP(data);
-    } else if (index == 5) {
-      const { data } = await fetchDataClientSite.get("api/gio-hang/giay-dep");
-      setDanhSachSP(data);
-    }
-  }
-
   function hienThiItemGioHang() {
     let items = [];
 
@@ -54,9 +33,8 @@ export default function GioHang() {
       let item = danhSachSP[i];
       items.push(
         <ItemGioHang
-          ten={item.name}
-          image={item.image}
-          khoiluong={item.khoiLuong}
+          ten={item.ten}
+          image={item.hinhanh}
           soluong={item.soluong}
           gia={item.gia}
         />
@@ -75,68 +53,6 @@ export default function GioHang() {
   }
   return (
     <div>
-      <div className={styles.button}>
-        <button
-          className={
-            tabIndex == 0
-              ? styles.tab_button_passive + " " + styles.tab_button_active
-              : styles.tab_button_passive
-          }
-          onClick={() => nhanVaoTab(0)}
-        >
-          Bút
-        </button>
-        <button
-          className={
-            tabIndex == 1
-              ? styles.tab_button_passive + " " + styles.tab_button_active
-              : styles.tab_button_passive
-          }
-          onClick={() => nhanVaoTab(1)}
-        >
-          Đồ Gia Dụng
-        </button>
-        <button
-          className={
-            tabIndex == 2
-              ? styles.tab_button_passive + " " + styles.tab_button_active
-              : styles.tab_button_passive
-          }
-          onClick={() => nhanVaoTab(2)}
-        >
-          Điện Thoại
-        </button>
-        <button
-          className={
-            tabIndex == 3
-              ? styles.tab_button_passive + " " + styles.tab_button_active
-              : styles.tab_button_passive
-          }
-          onClick={() => nhanVaoTab(3)}
-        >
-          Máy Tính
-        </button>
-        <button
-          className={
-            tabIndex == 4
-              ? styles.tab_button_passive + " " + styles.tab_button_active
-              : styles.tab_button_passive
-          }
-          onClick={() => nhanVaoTab(4)}
-        >
-          Quần Áo
-        </button>
-        <button
-          className={
-            tabIndex == 5
-              ? styles.tab_button_passive + " " + styles.tab_button_active
-              : styles.tab_button_passive
-          }
-          onClick={() => nhanVaoTab(5)}
-        >
-          Giày Dép
-        </button>
-      </div>
       <div>
         <div className={styles.container}>{hienThiItemGioHang()}</div>
       </div>
