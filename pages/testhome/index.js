@@ -1,7 +1,7 @@
 import { NEXT_BUILTIN_DOCUMENT } from "next/dist/shared/lib/constants";
 import { useState, useTransition } from "react";
 export default function TestHome() {
-  const [conSo, setConSo] = useState(10);
+  const [conSo, setConSo] = useState(0);
   const [tenNguoiLam, setTenNguoiLam] = useState("Hoàng Tý");
   const [input, setInput] = useState("");
   const [danhSachSP, setDanhSachSP] = useState([
