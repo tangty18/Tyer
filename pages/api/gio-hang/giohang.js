@@ -45,16 +45,18 @@ export default async function handler(req, res) {
       res.status(200).json([]);
     }
   } else if (req.method == "PUT") {
-    const id_product = req.body?.id_product;
-    const soluong = req.bodu?.soluong;
+    const id_sanpham = req.body?.id_product;
+    const soluong = req.body?.soluong;
 
     try {
       const chiaKhoa = req.cookies?.mykey;
 
       var decoded = jwt.verify(chiaKhoa, process.env.PASS_JWT);
 
+      const username = decoded.username
+
       if (chiaKhoa) {
-        const toanBo = await capNhat(id_product, soluong);
+        const toanBo = await capNhat({id_sanpham, soluong, username});
 
         res.status(200).json(toanBo);
       } else {

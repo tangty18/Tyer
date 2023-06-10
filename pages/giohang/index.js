@@ -38,6 +38,7 @@ export default function GioHang() {
           soluong={item.soluong}
           gia={item.gia}
           masp={item.masp}
+          id_sanpham={item.id_sanpham}
         />
       );
     }

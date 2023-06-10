@@ -15,7 +15,7 @@ export async function themSanPhamVaoGioHang(username,id_product,quantity){
 
 export async function layHet(username) {
     let res = await conn.query(
-      `SELECT s.hinhanh,s.gia,s.ten,g.soluong
+      `SELECT s.hinhanh,s.gia,s.ten,g.soluong,g.id_sanpham
        FROM giohang as g, sanpham as s
        WHERE username = $1 AND g.id_sanpham = s.masp`,
       [username]
@@ -23,6 +23,13 @@ export async function layHet(username) {
     return res.rows;
   }
 
-  export async function capNhat({id_sanpham,soluong}){
-    return []
+  export async function capNhat({id_sanpham,soluong,username}){
+    let res = await conn.query(
+      `UPDATE giohang
+      SET soluong =${soluong} 
+      WHERE id_sanpham = '${id_sanpham}' AND username = '${username}' `
+      
+     
+    );
+    return res.rows;
   }
