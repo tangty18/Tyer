@@ -36,8 +36,8 @@ await fetchDataClientSite.put("/api/gio-hang/giohang",{
         <img src={image} width={"100px"} height={"100px"} />
       </div>
 
-      <button onClick={tangMot}>+</button>
-      <button onClick={giamMot}>-</button>
+      <button className={styles.button} onClick={tangMot}>+</button>
+      <button className={styles.button} onClick={giamMot}>-</button>
     </div>
   );
 }

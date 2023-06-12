@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { VscAccount } from "react-icons/vsc";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
-import Link from "next/link";
+
 import { fetchDataClientSite } from "../../tools/axios";
 import { useEffect, useState } from "react";
 

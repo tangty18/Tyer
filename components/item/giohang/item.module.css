@@ -4,4 +4,8 @@
     margin: 10px;
     border-radius: 5px;
     font-style: italic;
+    text-align: center;
+}
+.button{
+    width: 50px;
 }
