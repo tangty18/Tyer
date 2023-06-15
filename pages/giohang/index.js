@@ -39,6 +39,8 @@ export default function GioHang() {
           gia={item.gia}
           masp={item.masp}
           id_sanpham={item.id_sanpham}
+          setDanhSachSP = {setDanhSachSP}
+          danhSachSP={danhSachSP}
         />
       );
     }

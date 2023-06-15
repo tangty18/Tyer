@@ -29,7 +29,15 @@ export async function layHet(username) {
       SET soluong =${soluong} 
       WHERE id_sanpham = '${id_sanpham}' AND username = '${username}' `
       
-     
     );
     return res.rows;
+  }
+
+  export async function xoaSP({id_sanpham,username}){
+      let sql = `
+      DELETE FROM giohang 
+      WHERE id_sanpham = '${id_sanpham}' AND username = '${username}'
+      `
+      let res = await conn.query(sql)
+      return res.rows
   }
