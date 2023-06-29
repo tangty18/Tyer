@@ -6,14 +6,15 @@ import { Layout1 } from "../../components/layout/layout1";
 import { fetchDataClientSite } from "../../tools/axios";
 export default function GioHang() {
   const [danhSachSP, setDanhSachSP] = useState([]);
-  const [tabIndex, setTabIndex] = useState(0);
-  const [ketQuaTimKiem, setKetquaTimKiem] = useState([]);
+  const [number, setNumBer] = useState(10);
+
   const router = useRouter();
   function datHang() {
     router.push({
       pathname: "/dat-hang",
     });
   }
+
 
   useEffect(() => {
     async function firstReload() {
@@ -26,6 +27,8 @@ export default function GioHang() {
 
     firstReload();
   }, []);
+
+
   function hienThiItemGioHang() {
     let items = [];
 
@@ -43,9 +46,12 @@ export default function GioHang() {
           danhSachSP={danhSachSP}
         />
       );
+    
     }
     return items;
+   
   }
+
 
   function tongTien() {
     let tongSoTien = 0;
@@ -62,6 +68,7 @@ export default function GioHang() {
       </div>
       <div>tổng tiền : {tongTien()} </div>
       <button onClick={datHang}>Đặt Hàng</button>
+      <button >Xóa sạch giỏ hàng</button>
     </div>
   );
 }
