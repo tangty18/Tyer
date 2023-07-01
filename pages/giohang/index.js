@@ -15,6 +15,11 @@ export default function GioHang() {
     });
   }
 
+  async function xoaHet(){
+const res = fetchDataClientSite.delete("/api/gio-hang/delete")
+alert('Xóa Thành Công ')
+  }
+
 
   useEffect(() => {
     async function firstReload() {
@@ -68,7 +73,7 @@ export default function GioHang() {
       </div>
       <div>tổng tiền : {tongTien()} </div>
       <button onClick={datHang}>Đặt Hàng</button>
-      <button >Xóa sạch giỏ hàng</button>
+      <button onClick={xoaHet}>Xóa sạch giỏ hàng</button>
     </div>
   );
 }
