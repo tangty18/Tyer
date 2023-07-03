@@ -1,9 +1,8 @@
-import { themSanPhamVaoDonHang } from "../../../service/donhang/donhang";
+import { taoDonHang } from "../../../service/donhang/donhang";
 
 const jwt = require("jsonwebtoken");
 export default async function handler(req, res) {
 if (req.method == "POST") {
-    const id_product = req.body?.id_product;
 
     try {
       const chiaKhoa = req.cookies?.mykey;
@@ -11,9 +10,9 @@ if (req.method == "POST") {
       var decoded = jwt.verify(chiaKhoa, process.env.PASS_JWT);
 
       if (chiaKhoa) {
-        const toanBo = await themSanPhamVaoDonHang(
+        const toanBo = await taoDonHang(
           decoded.username,
-          id_product,
+       
           1
         );
 
