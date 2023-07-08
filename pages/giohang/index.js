@@ -9,10 +9,8 @@ export default function GioHang() {
   const [number, setNumBer] = useState(10);
 
   const router = useRouter();
-  function datHang() {
-    router.push({
-      pathname: "/dat-hang",
-    });
+  async function datHang() {
+    const chiTietDonHang = await fetchDataClientSite.post("/api/donhang/donhang")
   }
 
   async function xoaHet(){
