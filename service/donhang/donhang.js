@@ -20,7 +20,7 @@ export async function taoDonHangChiTiet({ dssp, ma_dh }) {
     const id = uuidv4();
     const sp = dssp[i];
     const donHangChiTiet = [id, ma_dh, sp.id_sanpham, sp.soluong];
-    values.push();
+    values.push(donHangChiTiet);
   }
 
   const sql = format(

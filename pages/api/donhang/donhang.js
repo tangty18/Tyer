@@ -19,7 +19,7 @@ if (req.method == "POST") {
 
         const donHangChiTiet = await taoDonHangChiTiet({dssp:thongTinGioHang,ma_dh:taoDonHangMoi.ma_dh})
 
-        res.status(200).json(toanBo);
+        res.status(200).json(donHangChiTiet);
       } else {
         res.status(200).json([]);
       }
