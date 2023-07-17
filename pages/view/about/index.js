@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Layout1 } from "../../components/layout/layout1";
+import { Layout1 } from "../../../components/layout/layout1";
 
 
 export default function VeChungToi() {

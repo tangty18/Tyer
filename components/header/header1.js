@@ -3,8 +3,7 @@ import { useRouter } from "next/router";
 import { VscAccount } from "react-icons/vsc";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
-
-import { fetchDataClientSite } from "../../tools/axios";
+import { fetchDataNew } from "../../tools/axios";
 import { useEffect, useState } from "react";
 
 export function Header1() {
@@ -13,7 +12,7 @@ export function Header1() {
   const [ten, setTen] = useState("");
   useEffect(() => {
     async function getProfile() {
-      const { data } = await fetchDataClientSite.get("api/profile/hoso");
+      const { data } = await fetchDataNew.get("api/profile/hoso");
       setLogin(data?.isLogin);
       setTen(data?.user?.ten);
     }

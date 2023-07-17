@@ -30,3 +30,13 @@ export async function taoDonHangChiTiet({ dssp, ma_dh }) {
   let res = await conn.query(sql, []);
   return res;
 }
+
+export async function layThongTinDonHang({ username }) {
+  const sql = ` 
+SELECT * 
+FROM donhang
+WHERE username = '${username}'
+`;
+  let res = await conn.query(sql, []);
+  return res;
+}

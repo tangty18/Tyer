@@ -8,19 +8,19 @@ export function Footer1() {
 
   function about() {
     router.push({
-      pathname: "/about",
+      pathname: "/view/about",
     });
   }
 
   function contact() {
     router.push({
-      pathname: "/contact",
+      pathname: "/view/contact",
     });
   }
 
   function support() {
     router.push({
-      pathname: "/support",
+      pathname: "/view/support",
     });
   }
 
