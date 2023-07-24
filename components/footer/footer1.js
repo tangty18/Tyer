@@ -1,10 +1,9 @@
 import styles from "./footer1.module.css";
 import { useRouter } from "next/router";
-import {AiFillYoutube} from "react-icons/ai"
+import { AiFillYoutube } from "react-icons/ai";
 import Link from "next/link";
 export function Footer1() {
   const router = useRouter();
-
 
   function about() {
     router.push({
@@ -47,25 +46,26 @@ export function Footer1() {
     if (newWindow) newWindow.opener = null;
   };
 
-
-
   return (
-  <div className={styles.footer1}>
-  <div onClick={veTrangChu} className={styles.logo}>
-    footer
-  </div>
-  <div className={styles.item} onClick={about}>
-    Về Chúng Tôi
-  </div>
-  <div className={styles.item} onClick={contact}>
-    Liên Hệ
+    <div className={styles.footer1}>
+      <div onClick={veTrangChu} className={styles.logo}>
+        footer
+      </div>
+      <div className={styles.item} onClick={about}>
+        Về Chúng Tôi
+      </div>
+      <div className={styles.item} onClick={contact}>
+        Liên Hệ
+      </div>
+      <div className={styles.item} onClick={support}>
+        hỗ trợ
+      </div>
+      <div className={styles.donate} onClick={openInNewTab}>
+        Donate
+      </div>
+      <div className={styles.youtube} onClick={openInNewTab2}>
+        <AiFillYoutube title="Youtube" size={30} />
+      </div>
     </div>
-   <div className={styles.item} onClick={support}>
-    hỗ trợ
-  </div>
-  <div className={styles.donate} onClick={openInNewTab}>Donate</div>
-  <div className={styles.youtube} onClick={openInNewTab2}><AiFillYoutube title="Youtube" size={30}/></div>
-
-</div>
-);
+  );
 }

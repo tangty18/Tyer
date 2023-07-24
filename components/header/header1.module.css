@@ -6,11 +6,24 @@
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    text-align: left;
+    position: relative;
+    
 }
 
 .item{
-    padding-right: 10px;
-    align-items: center;
+    background-color: transparent;
+    border: 0 none;
+    color: var(--font-color);
+    display: block;
+    font-size: 17px;
+    line-height: 1.45;
+    padding: 15px 20px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
 }
 
 .logo{
