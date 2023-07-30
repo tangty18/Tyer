@@ -1,31 +1,30 @@
+import { useEffect } from "react";
 import { Layout1 } from "../../../components/layout/layout1";
 import { fetchDataNew } from "../../../tools/axios";
-export default function DonHang() {
-
-  return (
-    <div>
-      DonHang
-    </div>
-  );
+export default function DonHang({ duLieuBanDau }) {
+  useEffect(() => {
+    console.log({ test: duLieuBanDau });
+  }, []);
+  return <div>DonHang</div>;
 }
 
 DonHang.getLayout = function getLayout(page) {
   return (
     <Layout1>
-      <DonHang />
+      <DonHang duLieuBanDau={page.props} />
     </Layout1>
   );
 };
 
 export async function getServerSideProps(context) {
-  
-    // Fetch data from external API
-  
-    const { data } = await fetchDataNew.get("/api/donghang/donhang");
-    console.log({dulieu:data})
-    // Pass data to the page via props
-  
-  
-    return { props: {} };
-  }
-  
+  const { req, res } = context;
+  // Fetch data from external API
+
+  const { data } = await fetchDataNew.get("/api/donghang/donhang", {
+    headers: req.headers,
+  });
+
+  // Pass data to the page via props
+
+  return { props:  { data }  };
+}

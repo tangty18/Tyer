@@ -39,11 +39,14 @@ export default async function handler(req, res) {
       var decoded = jwt.verify(chiaKhoa, process.env.PASS_JWT);
 
       if (chiaKhoa) {
-        const thongTinDonHang = layThongTinDonHang({
+        const thongTinDonHang = await layThongTinDonHang({
           username: decoded.username,
         });
 
-       console.log({donhang:thongTinDonHang})
+        res.status(200).json({
+          rows: thongTinDonHang.rows,
+          rowCount: thongTinDonHang.rowCount,
+        });
       } else {
         res.status(200).json([]);
       }
