@@ -5,7 +5,17 @@ export default function DonHang({ duLieuBanDau }) {
   useEffect(() => {
     console.log({ test: duLieuBanDau });
   }, []);
-  return <div>DonHang</div>;
+  return (
+    <div>
+      {duLieuBanDau.rows.map((value,index)=>(
+        <div> 
+          <div> {value.madonhang} </div>
+          <div> {value.trangthai}</div>
+        </div>
+      ))}
+    </div>
+
+  );
 }
 
 DonHang.getLayout = function getLayout(page) {
@@ -20,11 +30,11 @@ export async function getServerSideProps(context) {
   const { req, res } = context;
   // Fetch data from external API
 
-  const { data } = await fetchDataNew.get("/api/donghang/donhang", {
+  const { data } = await fetchDataNew.get("/api/donhang/donhang", {
     headers: req.headers,
   });
 
   // Pass data to the page via props
 
-  return { props:  { data }  };
+  return { props: { data } };
 }

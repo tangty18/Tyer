@@ -4,8 +4,8 @@ import {
   taoDonHangChiTiet,
 } from "../../../service/donhang/donhang";
 import { layHet, xoaSachSP } from "../../../service/giohang/giohang";
-
 const jwt = require("jsonwebtoken");
+
 export default async function handler(req, res) {
   if (req.method == "POST") {
     try {
@@ -33,6 +33,7 @@ export default async function handler(req, res) {
       res.status(200).json([]);
     }
   } else if (req.method == "GET") {
+    console.log({ test: 12345 });
     try {
       const chiaKhoa = req.cookies?.mykey;
 

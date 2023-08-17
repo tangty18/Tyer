@@ -26,14 +26,18 @@ export function Item({ id,ten, gia, soluong, image }) {
   return (
     <div className={styles.item}>
       {/*<div>ID:{id}</div>*/}
-      <div>Tên:{ten}</div>
-      <div>Giá:{gia}</div>
-      <div>Số lượng:{soluong}</div>
       <div>
-        <img src={image} width={"100px"} height={"100px"} />
+        <img src={image} width={"300px"} height={"500px"} />
       </div>
-      <MdAddShoppingCart onClick={()=>themVaogioHang(id_san_pham)} size={30} color={"Green"}/>
-      <GiHeartPlus onClick={()=>themVaoYeuThich(id_san_pham)} size={30} color={"Pink"}/>
+      <div className={styles.item_name}>{ten}</div>
+     <div>
+        <span className={styles.price_old}>{gia}</span>
+        <span className={styles.price_current}>Giá Mới:{gia}</span>
+     </div>
+      <div>Số lượng:{soluong}</div>
+   
+      <MdAddShoppingCart onClick={()=>themVaogioHang(id_san_pham)} size={30} color={"Green"} cursor={"pointer"}/>
+      <GiHeartPlus onClick={()=>themVaoYeuThich(id_san_pham)} size={30} color={"Pink"} cursor={"pointer"}/>
     </div>
   );
 }

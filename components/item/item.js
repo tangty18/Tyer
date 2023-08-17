@@ -4,7 +4,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { GiHeartPlus } from "react-icons/gi";
 import { fetchDataClientSite } from "../../tools/axios";
 
-export function Item({ id, ten, soLuong, khoiLuong, image, gia }) {
+export function Item({ id, ten, soluong, khoiLuong, image, gia }) {
   const router = useRouter();
 
   function xemChiTiet() {
@@ -12,18 +12,15 @@ export function Item({ id, ten, soLuong, khoiLuong, image, gia }) {
       pathname: "/san-pham/[id]",
       query: {
         ...router.query,
-        id: id
-       },
+        id: id,
+      },
     });
   }
 
   async function themVaogioHang(id) {
-    const { data } = await fetchDataClientSite.post(
-      "/api/gio-hang/giohang",
-      {
-        id_product: id,
-      }
-    );
+    const { data } = await fetchDataClientSite.post("/api/gio-hang/giohang", {
+      id_product: id,
+    });
     alert("Thêm Vào Giỏ Hàng " + id + "thành Công");
   }
   async function themVaoYeuThich(id) {
@@ -34,29 +31,48 @@ export function Item({ id, ten, soLuong, khoiLuong, image, gia }) {
   }
 
   return (
-    <div className={styles.item}>
+    <div  className={styles.item}>
+      <div onClick={xemChiTiet} className={styles.img}>
+        <div>
+          <img src={image} width={300} height={500} />
+        </div>
+      </div>
       {/*<div>ID:{id}</div>*/}
-      <div className={styles.item_tilte}>{ten}</div>
-      <div>
-        <span className={styles.hien_co}>Hiện Có</span>:{" "}
-        <span className={styles.so_luong}>{gia}</span>
+      <div onClick={xemChiTiet} className={styles.item_name}>
+        <div className={styles.name}>{ten}</div>
       </div>
-      <div>Khối lượng: {khoiLuong}</div>
-      <div>Giá:{gia}</div>
-      <div>Số Lượng:{soLuong}</div>
-      <div>
-        <img src={image} width={"100px"} height={"100px"} />
+      <div className={styles.gia}>
+        <div className={styles.price_old}>
+       
+          <span>{gia}</span>
+        </div>
+        <div className={styles.price_current}>
+          <span>Giá Mới</span>: 
+          <span>{gia}</span>
+        </div>
+       {/* <div className={styles.acction}>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+  </div>*/}
+      
       </div>
-      <button onClick={xemChiTiet}>Xem chi tiết </button> <br />
+    
       <MdAddShoppingCart
         onClick={() => themVaogioHang(id)}
         size={30}
         color={"Green"}
+        cursor={"pointer"}
       />
       <GiHeartPlus
         onClick={() => themVaoYeuThich(id)}
         size={30}
         color={"Pink"}
+        cursor={"pointer"}
       />
     </div>
   );

@@ -1,24 +1,69 @@
 .item{
+    position: relative;
     width: 20%;
     border: 2px solid black;
     margin: 10px;
     border-radius: 5px;
     border-style: inset;
-    opacity: 1;
+    box-shadow:  0 0.1rem 0.2rem 0 rgba(0,0,0,.1);
+    transition: tranform linear 0.1s;
+    will-change: tranform;
+   
+    
+}
+.item:hover{
+    transform: translateY(-1px);
+    box-shadow:  0 0.1px 20px 0 rgba(0,0,0,0.05);
+  
+}
+
+.img{
+    padding-top:0px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center ;   
+    cursor: pointer;
+    
+}   
+
+.item_name{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.8rem;
+    height: 3.6rem;
+    margin: 10px 10px 6px;
     overflow: hidden;
-    aspect-ratio: auto ;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2 ;
+    cursor: pointer;
 }
-
-.item_tilte{
-    font-size: larger;
-    color:red;
-
-}
-
-.hien_co{
-    font-style: italic;
-}
-
 .gia{
-    text-decoration: underline;
+   display: flex;
+   margin-left: 10px;
+   align-items: baseline;
+  
+}
+.price_old{
+    font-size: 1.4rem;
+    color:#666;
+    text-decoration: line-through ;
+}
+.price_current{
+    font-size: 1.6rem;
+    color: rgb(255, 0, 0);
+    margin-left: 4px;
+}
+
+
+.anh{
+  
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.acction{
+    font-size: 1000px;
 }

@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import styles from "./trangchu.module.css";
 import { useState } from "react";
 import { Layout1 } from "../components/layout/layout1";
 export default function Home() {
@@ -57,7 +58,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className={styles.app}>
       {theLoaiSP.map((item) => (
         <div>
           Thể loại: {item.theLoai}{" "}
@@ -65,16 +66,16 @@ export default function Home() {
         </div>
       ))}
 
-      <img
-        src="https://vatvostudio.vn/wp-content/uploads/2022/09/rogphone6d.jpeg"
-        alt="Ảnh"
-        width={500}
-      />
-      <hr/>
+      <div className={styles.sanpham}>
+
+      </div>
+      
+      <div className={styles.css}>
       <button onClick={goHome}>Đừng Nhấn</button>
       <button onClick={goHome1}>Đừng Nhấn 2</button>
       <button onClick={goAdmin}>Go to admin</button>
-    </>
+      </div>
+    </div>
   );
 }
 
