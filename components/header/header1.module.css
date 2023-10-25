@@ -1,7 +1,7 @@
 .header1{
     background-color: #292d31;
     color:#fff;
-    height:40px;
+    height:0 auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -10,6 +10,7 @@
     padding: 15px 20px;
     text-align: left;
     position: relative;
+    margin: 0 auto;
     
 }
 
@@ -51,7 +52,7 @@
 .top_header{
     background-color: #292d31;
     color:#fff;
-    height:40px;
+    height:0 auto;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
@@ -59,4 +60,5 @@
     padding: 15px 20px;
     text-align: right;
     position: relative;
+    margin: 0 auto;
 }

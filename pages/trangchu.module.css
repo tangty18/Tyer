@@ -3,11 +3,16 @@
     flex: auto;
 }
 
-.img{
-    border-style: none;
-    display: block;
-    height: auto;
-    max-width: 100%;
-    opacity: 1;
-    overflow: hidden;
+.img {
+        background: #F1F1FA;
+        align-items: center;
+        display: block;
+        margin: 10px auto;
+        border: 0;
+      }
+      
+
+.app{
+    margin: 0 auto;
+    align-items: center;
 }
