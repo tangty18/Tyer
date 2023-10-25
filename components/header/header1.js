@@ -114,25 +114,25 @@ export function Header1() {
       <hr></hr>
       <div className={styles.header1}>
       <div onClick={veTrangChu} className={styles.logo}>
-        TYER
+        PINO
       </div>
       <div className={styles.item} onClick={xemBut}>
-        Xem Bút
+        Nước Hoa Nam
       </div>
       <div className={styles.item} onClick={xemDienThoai}>
-        Xem Điện Thoại
+        Nước Hoa Nữ
       </div>
       <div className={styles.item} onClick={xemDoGiaDung}>
-        Xem Đồ Gia Dụng
+        Mỹ phẩm
       </div>
       <div className={styles.item} onClick={xemGiayDep}>
-        Xem Giày Dép
+        toàn bộ sản phẩm
       </div>
       <div className={styles.item} onClick={xemMayTinh}>
-        Xem Máy Tính
+        sale
       </div>
       <div className={styles.item} onClick={xemQuanAo}>
-        Xem Quần Áo
+        about us
       </div>
       <div className={styles.dssp} onClick={danhSachSP}>
         <AiFillHeart
