@@ -5,13 +5,7 @@ import { Layout1 } from "../components/layout/layout1";
 export default function Home() {
   const router = useRouter();
 
-  const [hienDSSP, setHienDSSP] = useState(true);
-
-  useEffect(()=>{
-    setDanhSachSP(props.danhSachBut)
-  },[props.danhSachBut])
   
-
 
   return (
     <div className={styles.app}>
@@ -35,13 +29,3 @@ Home.getLayout = function getLayout(page) {
   );
 };
 
-export async function getServerSideProps(context) {
-  const type = context.query.type;
-  // Fetch data from external API
-
-  const { data } = await fetchData.post("/sanpham/get-all", { theloai: type });
-  // Pass data to the page via props
-
-
-  return { props: { danhSachBut: data } };
-}
