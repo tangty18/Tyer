@@ -34,7 +34,7 @@ export function Item({ id, ten, soluong, khoiLuong, image, gia }) {
     <div  className={styles.item}>
       <div onClick={xemChiTiet} className={styles.img}>
         <div>
-          <img src={image} width={300} height={500} />
+          <img src={image} width={"100%"} height={500} />
         </div>
       </div>
       {/*<div>ID:{id}</div>*/}

@@ -48,3 +48,15 @@
 .user{
     margin-left: 10px;
 }
+.top_header{
+    background-color: #292d31;
+    color:#fff;
+    height:40px;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    text-align: right;
+    position: relative;
+}

@@ -4,77 +4,25 @@ import { useState } from "react";
 import { Layout1 } from "../components/layout/layout1";
 export default function Home() {
   const router = useRouter();
-  const [theLoaiSP, setTheLoaiSP] = useState([
-    {
-      theLoai: "Bút",
-      key: "but",
-    },
-    {
-      theLoai: "Quần Áo",
-      key: "quanao",
-    },
-    {
-      theLoai: "Điện thoại",
-      key: "dienthoai",
-    },
-    {
-      theLoai: "Máy tính",
-      key: "mayting",
-    },
-    {
-      theLoai: "giày dép",
-      key: "giaydep",
-    },
-    {
-      theLoai: "Đồ Gia dụng",
-      key: "dogiadung",
-    },
-  ]);
 
-  function goHome() {
-    router.push({
-      pathname: "/homepage",
-    });
-  }
+  const [hienDSSP, setHienDSSP] = useState(true);
 
-  function goHome1() {
-    router.push({
-      pathname: "/testhome",
-    });
-  }
+  useEffect(()=>{
+    setDanhSachSP(props.danhSachBut)
+  },[props.danhSachBut])
+  
 
-  function goAdmin() {
-    router.push({
-      pathname: "/them-sp",
-    });
-  }
-
-
-
-  function xemChiTiet(key) {
-    router.push({
-      pathname: "/" + key,
-    });
-  }
 
   return (
     <div className={styles.app}>
-      {theLoaiSP.map((item) => (
-        <div>
-          Thể loại: {item.theLoai}{" "}
-          <button onClick={() => xemChiTiet(item.key)}>Xem Chi Tiết</button>
-        </div>
-      ))}
+   <div className={styles.img}>
+   <img src="https://web1g.cdn.vccloud.vn/libi/category/banner-sale-01.jpg"  ></img>
+   </div>
 
       <div className={styles.sanpham}>
 
       </div>
-      
-      <div className={styles.css}>
-      <button onClick={goHome}>Đừng Nhấn</button>
-      <button onClick={goHome1}>Đừng Nhấn 2</button>
-      <button onClick={goAdmin}>Go to admin</button>
-      </div>
+    
     </div>
   );
 }
@@ -86,3 +34,14 @@ Home.getLayout = function getLayout(page) {
     </Layout1>
   );
 };
+
+export async function getServerSideProps(context) {
+  const type = context.query.type;
+  // Fetch data from external API
+
+  const { data } = await fetchData.post("/sanpham/get-all", { theloai: type });
+  // Pass data to the page via props
+
+
+  return { props: { danhSachBut: data } };
+}

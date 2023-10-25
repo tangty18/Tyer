@@ -109,7 +109,10 @@ export function Header1() {
   }
 
   return (
-    <div className={styles.header1}>
+    <div>
+      <div className={styles.top_header}> halo </div>
+      <hr></hr>
+      <div className={styles.header1}>
       <div onClick={veTrangChu} className={styles.logo}>
         TYER
       </div>
@@ -153,7 +156,11 @@ export function Header1() {
           {" "}
           Dang Xuat{" "}
         </div>
-      )}
+         )}
+        </div>
+      
+    
+     
     </div>
   );
 }

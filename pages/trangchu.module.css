@@ -3,6 +3,11 @@
     flex: auto;
 }
 
-.sanpham{
-    
+.img{
+    border-style: none;
+    display: block;
+    height: auto;
+    max-width: 100%;
+    opacity: 1;
+    overflow: hidden;
 }
