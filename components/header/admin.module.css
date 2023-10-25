@@ -1,34 +1,68 @@
-.tilte{
-    font-size: 75px;
-    text-align: center;
+/* admin.module.css */
+
+.chao
+{
+  font-size: 50px;
+
+  color: #fff;
+  text-align: center;
 }
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .sidebar {
-    flex: 1;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    min-height: 100vh;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    margin-bottom: 10px;
-  }
-  
-  .content {
-    flex: 3;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
+  display: flex;
+  max-width: auto;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.content {
+  flex: 3;
+  padding: 20px;
+  background-color: #fff;
+  border: 5px solid #ddd;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  margin-bottom: 10px;
+}
+
+.menuItem a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+}
+
+.menuItem a:hover {
+  color: #555;
+}
+
+.user{
+  margin-left: 10px;
+}
+
+.dangXuat{
+  margin-left: 10px;
+}

@@ -110,7 +110,7 @@ export function Header1() {
 
   return (
     <div>
-      <div className={styles.top_header}> halo </div>
+      <div className={styles.top_header}> 0369523467 </div>
       <hr></hr>
       <div className={styles.header1}>
       <div onClick={veTrangChu} className={styles.logo}>
