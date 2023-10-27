@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className={styles.app}>
        <div className={styles.img}>
-          <img  src="https://web1g.cdn.vccloud.vn/libi/category/banner-sale-01.jpg" width={"100%"} height={"80%"} ></img>
+          <img class= "lazy" src="https://web1g.cdn.vccloud.vn/libi/category/banner-sale-01.jpg" width={"100%"} height={"80%"} ></img>
        </div>
 
       <div className={styles.sanpham}>
